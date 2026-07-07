@@ -11,26 +11,26 @@
   <nav class="nav">
     <a class="logo" href="index.html"><img src="assets/logo.png" alt="شعار المؤسسة"></a>
     <div class="links">
-      <a href="about.html">عن المؤسسة</a>
+      <a href="about.html" data-ar="عن المؤسسة" data-en="About">عن المؤسسة</a>
       <div class="dropdown">
-        <a href="#" class="drop-toggle">المقاولات العامة ▾</a>
+        <a href="#" class="drop-toggle" data-ar="المقاولات العامة ▾" data-en="General Contracting ▾">المقاولات العامة ▾</a>
         <div class="dropdown-menu">
-          <a href="contracting-new.html">الجديد</a>
-          <a href="contracting-repair.html">ترميم وصيانه</a>
+          <a href="contracting-new.html" data-ar="الجديد" data-en="New">الجديد</a>
+          <a href="contracting-repair.html" data-ar="ترميم وصيانه" data-en="Renovation & Maintenance">ترميم وصيانه</a>
         </div>
       </div>
       <div class="dropdown">
-        <a href="#" class="drop-toggle active">التبريد والتكييف والإلكترونيات ▾</a>
+        <a href="#" class="drop-toggle active" data-ar="التبريد والتكييف والإلكترونيات ▾" data-en="Cooling, AC & Electronics ▾">التبريد والتكييف والإلكترونيات ▾</a>
         <div class="dropdown-menu">
-          <a href="cooling-buy.html">شراء جديد</a>
-          <a href="cooling-maintenance.html">صيانة</a>
-          <a href="cooling-copper.html">تمديد نحاس مكيفات</a>
-          <a href="cooling-complaints.html">الشكاوى</a>
+          <a href="cooling-buy.html" data-ar="شراء جديد" data-en="New Purchase">شراء جديد</a>
+          <a href="cooling-maintenance.html" data-ar="صيانة" data-en="Maintenance">صيانة</a>
+          <a href="cooling-copper.html" data-ar="تمديد نحاس مكيفات" data-en="AC Copper Piping">تمديد نحاس مكيفات</a>
+          <a href="cooling-complaints.html" data-ar="الشكاوى" data-en="Complaints">الشكاوى</a>
         </div>
       </div>
-      <a href="security.html">الأنظمة الأمنية والذكية</a>
-      <a href="solar.html">الطاقة الشمسية</a>
-      <a href="work.html">أعمالنا</a>
+      <a href="security.html" data-ar="الأنظمة الأمنية والذكية" data-en="Security & Smart Systems">الأنظمة الأمنية والذكية</a>
+      <a href="solar.html" data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</a>
+      <a href="work.html" data-ar="أعمالنا" data-en="Our Work">أعمالنا</a>
     </div>
     <div class="nav-actions">
       <div class="cta-group">
@@ -63,35 +63,35 @@
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="شكوى - التبريد والتكييف والإلكترونيات" onsubmit="return sendReq(event)">
-        <label>الاسم
+        <label data-ar="الاسم" data-en="Name">الاسم
           <input type="text" name="name" data-label="الاسم" required>
         </label>
-        <label>رقم الجوال
+        <label data-ar="رقم الجوال" data-en="Phone Number">رقم الجوال
           <input type="tel" name="phone" data-label="رقم الجوال" required>
         </label>
-        <label>المواعيد المتاحة
-          <input type="text" name="times" data-label="المواعيد المتاحة" placeholder="مثال: صباحاً 9-12">
+        <label data-ar="المواعيد المتاحة" data-en="Available Times">المواعيد المتاحة
+          <input type="text" name="times" data-label="المواعيد المتاحة" data-placeholder-ar="مثال: صباحاً 9-12" data-placeholder-en="e.g. mornings 9-12" placeholder="مثال: صباحاً 9-12">
         </label>
-        <label>نوع الجهاز
+        <label data-ar="نوع الجهاز" data-en="Device Type">نوع الجهاز
           <select name="device" data-label="نوع الجهاز" required>
-            <option value="">اختر الجهاز</option>
-            <option>مكيف شباك</option>
-            <option>مكيف اسبلت</option>
-            <option>مكيف دولاب</option>
-            <option>مكيف داكت</option>
-            <option>غسالة ملابس</option>
-            <option>غسالة صحون</option>
-            <option>مايكروويف</option>
-            <option>فرن</option>
-            <option>بوتاجاز</option>
-            <option>ثلاجة</option>
-            <option>فريزر</option>
+            <option value="" data-ar="اختر الجهاز" data-en="Select device">اختر الجهاز</option>
+            <option data-ar="مكيف شباك" data-en="Window AC">مكيف شباك</option>
+            <option data-ar="مكيف اسبلت" data-en="Split AC">مكيف اسبلت</option>
+            <option data-ar="مكيف دولاب" data-en="Cabinet AC">مكيف دولاب</option>
+            <option data-ar="مكيف داكت" data-en="Duct AC">مكيف داكت</option>
+            <option data-ar="غسالة ملابس" data-en="Washing Machine">غسالة ملابس</option>
+            <option data-ar="غسالة صحون" data-en="Dishwasher">غسالة صحون</option>
+            <option data-ar="مايكروويف" data-en="Microwave">مايكروويف</option>
+            <option data-ar="فرن" data-en="Oven">فرن</option>
+            <option data-ar="بوتاجاز" data-en="Stove">بوتاجاز</option>
+            <option data-ar="ثلاجة" data-en="Refrigerator">ثلاجة</option>
+            <option data-ar="فريزر" data-en="Freezer">فريزر</option>
           </select>
         </label>
-        <label>تفاصيل الشكوى
-          <textarea name="details" data-label="تفاصيل الشكوى" rows="5" required></textarea>
+        <label data-ar="تفاصيل الشكوى" data-en="Complaint Details">تفاصيل الشكوى
+          <textarea name="details" data-label="تفاصيل الشكوى" data-placeholder-ar="اشرح تفاصيل الشكوى" data-placeholder-en="Describe the complaint details" rows="5" required></textarea>
         </label>
-        <button type="submit" class="cta">إرسال الطلب</button>
+        <button type="submit" class="cta" data-ar="إرسال الطلب" data-en="Submit Request">إرسال الطلب</button>
       </form>
     </div>
   </section>
@@ -136,24 +136,31 @@
       }
     }
   })();
-  (function(){
-    var defLang='ar';
-    function apply(lang){
-      var d=document.documentElement;
-      d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
-      var els=document.querySelectorAll('[data-en]');
-      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
-      var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
-      try{localStorage.setItem('lang',lang);}catch(e){}
-    }
-    var saved; try{saved=localStorage.getItem('lang');}catch(e){}
-    if(saved) apply(saved);
-    var btn=document.getElementById('langToggle');
-    if(btn) btn.addEventListener('click',function(){
-      var next=(document.documentElement.lang==='ar')?'en':'ar';
-      apply(next);
-    });
-  })();
+    (function(){
+      var defLang='ar';
+      function apply(lang){
+        var d=document.documentElement;
+        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+        var els=document.querySelectorAll('[data-en]');
+        for(var i=0;i<els.length;i++){
+          var v=els[i].getAttribute('data-'+lang);
+          if(v!==null) els[i].textContent=v;
+          var ph=els[i].getAttribute('data-placeholder-'+lang);
+          if(ph) els[i].placeholder=ph;
+        }
+        var opts=document.querySelectorAll('option[data-'+lang+']');
+        for(var i=0;i<opts.length;i++){var v=opts[i].getAttribute('data-'+lang); if(v!==null) opts[i].textContent=v;}
+        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+        try{localStorage.setItem('lang',lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+      if(saved) apply(saved);
+      var btn=document.getElementById('langToggle');
+      if(btn) btn.addEventListener('click',function(){
+        var next=(document.documentElement.lang==='ar')?'en':'ar';
+        apply(next);
+      });
+    })();
   </script>
 </body>
 </html>
