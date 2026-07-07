@@ -124,11 +124,14 @@
         d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
         var els=document.querySelectorAll('[data-en]');
         for(var i=0;i<els.length;i++){
-          var v=els[i].getAttribute('data-'+lang);
-          if(v!==null) els[i].textContent=v;
-          var ph=els[i].getAttribute('data-placeholder-'+lang);
-          if(ph) els[i].placeholder=ph;
+          var el=els[i];
+          var tag=el.tagName.toLowerCase();
+          if(tag==='input'||tag==='select'||tag==='textarea'||tag==='option') continue;
+          var v=el.getAttribute('data-'+lang);
+          if(v!==null) el.textContent=v;
         }
+        var inputs=document.querySelectorAll('input[data-placeholder-'+lang+'], textarea[data-placeholder-'+lang+']');
+        for(var i=0;i<inputs.length;i++){var ph=inputs[i].getAttribute('data-placeholder-'+lang); if(ph) inputs[i].placeholder=ph;}
         var opts=document.querySelectorAll('option[data-'+lang+']');
         for(var i=0;i<opts.length;i++){var v=opts[i].getAttribute('data-'+lang); if(v!==null) opts[i].textContent=v;}
         var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
