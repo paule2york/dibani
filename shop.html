@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang='ar' dir='rtl'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title data-ar='المتجر | مؤسسة فيصل الديباني' data-en='Shop | Faisal Aldibani Company'>المتجر | مؤسسة فيصل الديباني</title>
+  <link rel='stylesheet' href='multipage.css'>
+  <link rel='stylesheet' href='menu.css'>
+  <style>
+    .page-hero{min-height:auto!important;padding-top:118px!important;padding-bottom:30px!important}
+    .page-hero .hero-inner{min-height:auto!important;align-items:center}
+    .page-hero h1{font-size:clamp(1.55rem,3.5vw,2.3rem)!important;margin:6px 0!important}
+    .page-hero .lead{margin:0!important}
+    .page-hero .hero-art{display:none!important}
+    @media(max-width:560px){.page-hero{padding-top:94px!important;padding-bottom:22px!important}}
+    .shop-toolbar{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin:0 0 24px}
+    .shop-cats{display:flex;flex-wrap:wrap;gap:8px}
+    .cat-chip{padding:8px 16px;border-radius:999px;border:1px solid rgba(14,165,233,.3);background:#fff;color:#0369a1;font-weight:700;cursor:pointer;font-family:inherit;font-size:.9rem;transition:all .2s}
+    .cat-chip.active{background:linear-gradient(135deg,#0ea5e9,#075985);color:#fff;border-color:transparent}
+    .cart-btn{padding:10px 18px;border-radius:999px;border:0;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;font-weight:800;cursor:pointer;font-family:inherit;font-size:.92rem;display:inline-flex;gap:6px;align-items:center}
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .p-card{display:flex;flex-direction:column;border:1px solid rgba(14,165,233,.16);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(8,47,73,.08);transition:transform .2s,box-shadow .2s}
+    .p-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(8,47,73,.16)}
+    .p-thumb{height:180px;overflow:hidden;background:linear-gradient(145deg,#e0f2fe,#f0f9ff)}
+    .p-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .p-info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .p-cat{font-size:.75rem;color:#0369a1;background:rgba(14,165,233,.12);padding:3px 9px;border-radius:999px;width:fit-content}
+    .p-name{margin:0;font-size:1.05rem;color:#07364f;font-weight:800}
+    .p-price{color:#ea580c;font-weight:800;font-size:1.08rem;margin-top:auto}
+    .p-actions{display:flex;gap:8px;margin-top:6px}
+    .btn-primary{flex:1;padding:9px 12px;border-radius:10px;border:0;background:linear-gradient(135deg,#0ea5e9,#075985);color:#fff;font-weight:700;cursor:pointer;font-family:inherit}
+    .btn-ghost{padding:9px 12px;border-radius:10px;border:1px solid rgba(14,165,233,.3);background:#fff;color:#0369a1;font-weight:700;cursor:pointer;font-family:inherit}
+    .modal{position:fixed;inset:0;background:rgba(2,6,23,.62);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:6000;padding:18px}
+    .modal.open{display:flex}
+    .modal-box{position:relative;background:#fff;border-radius:18px;max-width:620px;width:100%;max-height:90vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.4);padding:24px 22px}
+    .modal-close{position:absolute;inset-inline-end:12px;top:8px;background:none;border:0;font-size:1.9rem;line-height:1;cursor:pointer;color:#64748b}
+    .modal-box h2{margin:0 0 6px;color:#07364f}
+    .pm-hero{height:230px;border-radius:14px;overflow:hidden;background:linear-gradient(145deg,#e0f2fe,#f0f9ff);margin-bottom:16px}
+    .pm-hero img{width:100%;height:100%;object-fit:cover;display:block}
+    .pm-desc{color:#475569;line-height:1.8;margin:8px 0}
+    .pm-price{color:#ea580c;font-weight:800;font-size:1.4rem;margin:10px 0}
+    .qty-row{display:inline-flex;align-items:center;gap:16px;margin:6px 0 14px;border:1px solid #e2e8f0;border-radius:999px;padding:6px 14px}
+    .qty-row button{width:30px;height:30px;border-radius:50%;border:0;background:#0ea5e9;color:#fff;font-size:1.1rem;cursor:pointer}
+    .cart-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eef2f7}
+    .ci-thumb{width:56px;height:56px;border-radius:10px;overflow:hidden;background:#f0f9ff;flex:none}
+    .ci-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .ci-info{flex:1}
+    .ci-name{font-weight:700;color:#07364f}
+    .ci-price{color:#ea580c;font-weight:700;font-size:.9rem}
+    .ci-qty{display:inline-flex;align-items:center;gap:8px}
+    .ci-qty button{width:26px;height:26px;border-radius:50%;border:0;background:#e2e8f0;cursor:pointer;font-weight:800}
+    .ci-remove{background:none;border:0;color:#ef4444;cursor:pointer;font-size:1.2rem}
+    .cart-total{display:flex;justify-content:space-between;font-weight:800;font-size:1.15rem;color:#07364f;margin:16px 0}
+    .cart-empty{color:#64748b;text-align:center;padding:30px 0}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    .field label{font-weight:700;color:#334155;font-size:.9rem}
+    .field input,.field select,.field textarea{padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-family:inherit;font-size:.95rem}
+    .summary{background:#f8fafc;border-radius:12px;padding:14px;margin:14px 0}
+    .summary .row{display:flex;justify-content:space-between;padding:4px 0;color:#475569}
+    .summary .row.total{font-weight:800;color:#07364f;border-top:1px solid #e2e8f0;margin-top:6px;padding-top:8px}
+    .success{text-align:center;padding:16px}
+    .success .tick{font-size:3.4rem}
+    .w-full{width:100%;margin-top:6px}
+    .link-cta{display:inline-flex;padding:11px 22px;border-radius:999px;background:linear-gradient(135deg,#0ea5e9,#075985);color:#fff;font-weight:800;text-decoration:none}
+  </style>
+</head>
+<body>
+  <nav class='nav'>
+    <a class='logo' href='index.html'><img src='assets/logo.png' alt='شعار المؤسسة'></a>
+    <div class='links'>
+      <a href='about.html' data-ar='عن المؤسسة' data-en='About'>عن المؤسسة</a>
+      <div class='dropdown'>
+        <a href='#' class='drop-toggle' data-ar='المقاولات العامة ▾' data-en='General Contracting ▾'>المقاولات العامة ▾</a>
+        <div class='dropdown-menu'>
+          <a href='contracting-new.html' data-ar='الجديد' data-en='New'>الجديد</a>
+          <a href='contracting-repair.html' data-ar='ترميم' data-en='Renovation'>ترميم</a>
+          <a href='contracting-maintenance.html' data-ar='صيانة' data-en='Maintenance'>صيانة</a>
+        </div>
+      </div>
+      <div class='dropdown'>
+        <a href='#' class='drop-toggle' data-ar='التبريد والتكييف والإلكترونيات ▾' data-en='Cooling, AC & Electronics ▾'>التبريد والتكييف والإلكترونيات ▾</a>
+        <div class='dropdown-menu'>
+          <a href='cooling-buy.html' data-ar='شراء جديد' data-en='New Purchase'>شراء جديد</a>
+          <a href='cooling-maintenance.html' data-ar='صيانة' data-en='Maintenance'>صيانة</a>
+          <a href='cooling-complaints.html' data-ar='الشكاوى' data-en='Complaints'>الشكاوى</a>
+        </div>
+      </div>
+      <a href='security.html' data-ar='الأنظمة الأمنية والذكية' data-en='Security & Smart Systems'>الأنظمة الأمنية والذكية</a>
+      <a href='solar.html' data-ar='الطاقة الشمسية' data-en='Solar Energy'>الطاقة الشمسية</a>
+      <a href='work.html' data-ar='أعمالنا' data-en='Our Work'>أعمالنا</a>
+    </div>
+    <div class='nav-actions'>
+      <div class='cta-group'>
+        <a class='cta cta-shop active' href='shop.html' data-ar='تسوّق الآن' data-en='Shop Now'>تسوّق الآن</a>
+        <a class='cta' href='contact.html' data-ar='تواصل معنا' data-en='Contact'>تواصل معنا</a>
+      </div>
+      <button class='lang-toggle' id='langToggle' type='button'>EN</button>
+      <button class='nav-toggle' type='button' id='navToggle' aria-label='القائمة' aria-expanded='false'><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <header class='page-hero'>
+    <div class='container hero-inner'>
+      <div class='reveal'>
+        <span class='eyebrow' data-ar='المتجر' data-en='Shop'>المتجر</span>
+        <h1 data-ar='تسوّق أجهزة التكييف والتبريد والإلكترونيات.' data-en='Shop air-conditioning, refrigeration and electronics.'>تسوّق أجهزة التكييف والتبريد والإلكترونيات.</h1>
+        <p class='lead' data-ar='اختر الجهاز المناسب، أضفه إلى السلة وأكمل الطلب. هذا متجر تجريبي للعرض.' data-en='Pick a unit, add it to the cart and complete the order. This is a demo shop.'>اختر الجهاز المناسب، أضفه إلى السلة وأكمل الطلب. هذا متجر تجريبي للعرض.</p>
+      </div>
+    </div>
+  </header>
+  <section class='section'>
+    <div class='container'>
+      <div class='shop-toolbar'>
+        <div class='shop-cats' id='shopCats'></div>
+        <button class='cart-btn' id='cartBtn' type='button'>🛒 <span data-ar='السلة' data-en='Cart'>السلة</span> (<span id='cartCount'>0</span>)</button>
+      </div>
+      <div class='shop-grid' id='shopGrid'></div>
+    </div>
+  </section>
+  <section class='section dark-band'>
+    <div class='container section-head'>
+      <h2 data-ar='لم تجد ما تبحث عنه؟' data-en='Did not find what you need?'>لم تجد ما تبحث عنه؟</h2>
+      <p data-ar='تواصل معنا وسنساعدك في اختيار الجهاز المناسب وتوفيره وتركيبه.' data-en='Contact us and we will help you choose, supply and install the right unit.'>تواصل معنا وسنساعدك في اختيار الجهاز المناسب وتوفيره وتركيبه.</p>
+    </div>
+    <div class='container'><a class='link-cta' href='contact.html' data-ar='تواصل معنا' data-en='Contact us'>تواصل معنا</a></div>
+  </section>
+  <footer class='footer'><div class='container'><span data-ar='© 2026 مؤسسة فيصل فهد سالم الديباني' data-en='© 2026 Faisal Fahad Salem Aldibani Company'>© 2026 مؤسسة فيصل فهد سالم الديباني</span><a class='dev-by' href='https://arabixweb.com' target='_blank' rel='noopener'><span data-ar='طُوِّر بواسطة' data-en='Developed by'>طُوِّر بواسطة</span><img src='https://www.arabixweb.com/assets/logo-white.png' alt='Arabix'></a></div></footer>
+
+  <div class='modal' id='productModal'><div class='modal-box'><button class='modal-close' data-close type='button'>×</button><div id='pmBody'></div></div></div>
+  <div class='modal' id='cartModal'><div class='modal-box'><button class='modal-close' data-close type='button'>×</button><h2 data-ar='سلة التسوق' data-en='Shopping cart'>سلة التسوق</h2><div id='cartBody'></div></div></div>
+  <div class='modal' id='checkoutModal'><div class='modal-box'><button class='modal-close' data-close type='button'>×</button><h2 data-ar='إتمام الطلب' data-en='Checkout'>إتمام الطلب</h2><div id='checkoutBody'></div></div></div>
+
+  <script>
+  (function(){
+    var CATS=[
+      {id:'all',ar:'الكل',en:'All'},
+      {id:'ac',ar:'تكييف',en:'Air-Conditioning'},
+      {id:'ref',ar:'تبريد',en:'Refrigeration'},
+      {id:'elec',ar:'إلكترونيات',en:'Electronics'}
+    ];
+    var PRODUCTS=[
+      {id:1,cat:'ac',img:'window,air-conditioner',ar:'مكيف شباك',en:'Window AC',price:1200,dar:'مناسب للغرف الصغيرة مع تركيب سريع وصيانة سهلة.',den:'Ideal for small rooms with quick installation and easy maintenance.'},
+      {id:2,cat:'ac',img:'split,air-conditioner',ar:'مكيف اسبلت',en:'Split AC',price:1850,dar:'أداء هادئ وتبريد فعّال للمنازل والمكاتب.',den:'Quiet performance and efficient cooling for homes and offices.'},
+      {id:3,cat:'ac',img:'air-conditioner,unit',ar:'مكيف دولاب',en:'Cabinet AC',price:3200,dar:'قدرة تبريد عالية للمساحات الواسعة والصالات.',den:'High cooling capacity for large spaces and halls.'},
+      {id:4,cat:'ac',img:'hvac,duct',ar:'مكيف داكت',en:'Duct AC',price:4500,dar:'حل مخفي للتبريد المركزي للمباني والفلل.',den:'A concealed central cooling solution for buildings and villas.'},
+      {id:5,cat:'elec',img:'washing-machine',ar:'غسالة ملابس',en:'Washing Machine',price:1600,dar:'أحجام متعددة تناسب احتياج الأسرة مع برامج غسيل حديثة.',den:'Multiple sizes for family needs with modern wash programs.'},
+      {id:6,cat:'elec',img:'dishwasher',ar:'غسالة صحون',en:'Dishwasher',price:1900,dar:'توفير في الماء والوقت مع تنظيف عميق.',den:'Saves water and time with a deep clean.'},
+      {id:7,cat:'elec',img:'microwave-oven',ar:'مايكروويف',en:'Microwave',price:450,dar:'تسخين وطهي سريع للاستخدام اليومي.',den:'Fast heating and cooking for daily use.'},
+      {id:8,cat:'elec',img:'oven,kitchen',ar:'فرن',en:'Oven',price:900,dar:'خيارات كهربائية وغازية للخبز والطهي.',den:'Electric and gas options for baking and cooking.'},
+      {id:9,cat:'elec',img:'gas-stove',ar:'بوتاجاز',en:'Gas Cooker',price:1100,dar:'شعلات متعددة وتنظيف سهل وأمان عالٍ.',den:'Multiple burners, easy cleaning and high safety.'},
+      {id:10,cat:'ref',img:'refrigerator',ar:'ثلاجة',en:'Refrigerator',price:2400,dar:'سعات متنوعة مع تبريد موفر للطاقة.',den:'Various capacities with energy-saving cooling.'},
+      {id:11,cat:'ref',img:'freezer',ar:'فريزر',en:'Freezer',price:1500,dar:'تخزين طويل للأطعمة بدرجات حرارة ثابتة.',den:'Long-term food storage at stable temperatures.'}
+    ];
+    var cart=[]; var activeCat='all';
+    function L(){return (document.documentElement.lang==='en')?'en':'ar';}
+    function t(ar,en){return L()==='ar'?ar:en;}
+    function byId(id){for(var i=0;i<PRODUCTS.length;i++){if(PRODUCTS[i].id===id)return PRODUCTS[i];}return null;}
+    function byCat(id){for(var i=0;i<CATS.length;i++){if(CATS[i].id===id)return CATS[i];}return null;}
+    function money(v){return L()==='ar'?(v+' ريال'):(v+' SAR');}
+    function catGrad(cat){if(cat==='ac')return ['#0ea5e9','#075985'];if(cat==='ref')return ['#06b6d4','#0e7490'];if(cat==='elec')return ['#6366f1','#4338ca'];return ['#0ea5e9','#075985'];}
+    var ICONS={
+      1:"<rect x='2' y='6' width='20' height='12' rx='2'/><path d='M2 12h20'/><path d='M6 15h4'/><path d='M14 15h4'/>",
+      2:"<rect x='2' y='5' width='20' height='7' rx='2'/><path d='M2 9h20'/><path d='M7 16c1 1 2 1 3 0'/><path d='M13 16c1 1 2 1 3 0'/><path d='M7 20c1 1 2 1 3 0'/><path d='M13 20c1 1 2 1 3 0'/>",
+      3:"<rect x='7' y='2' width='10' height='20' rx='2'/><path d='M7 8h10'/><path d='M10 12h4'/><path d='M10 15h4'/>",
+      4:"<rect x='2' y='8' width='6' height='8' rx='1'/><rect x='9' y='10' width='6' height='4'/><rect x='16' y='6' width='6' height='12' rx='1'/>",
+      5:"<rect x='4' y='2' width='16' height='20' rx='2'/><circle cx='12' cy='13' r='5'/><circle cx='12' cy='13' r='2'/><path d='M7 6h.01'/><path d='M11 6h.01'/>",
+      6:"<rect x='4' y='2' width='16' height='20' rx='2'/><path d='M4 7h16'/><path d='M8 5h.01'/><path d='M11 5h.01'/><path d='M9 11l2 6'/><path d='M15 11l-2 6'/>",
+      7:"<rect x='2' y='5' width='20' height='14' rx='2'/><rect x='5' y='8' width='9' height='8'/><path d='M18 8v8'/>",
+      8:"<rect x='4' y='3' width='16' height='18' rx='2'/><path d='M4 9h16'/><path d='M8 6h.01'/><path d='M11 6h.01'/><rect x='7' y='12' width='10' height='6' rx='1'/>",
+      9:"<rect x='3' y='4' width='18' height='16' rx='2'/><circle cx='8' cy='9' r='2'/><circle cx='16' cy='9' r='2'/><circle cx='8' cy='15' r='2'/><circle cx='16' cy='15' r='2'/>",
+      10:"<rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 10h12'/><path d='M9 5v2'/><path d='M9 13v3'/>",
+      11:"<rect x='2' y='7' width='20' height='11' rx='2'/><path d='M2 11h20'/><path d='M16 9V7'/><path d='M6 14h3'/>"
+    };
+    function imgUrl(p){
+      var g=catGrad(p.cat);
+      var icon=ICONS[p.id]||"<rect x='4' y='4' width='16' height='16' rx='2'/>";
+      var svg="<svg xmlns='http://www.w3.org/2000/svg' width='600' height='450' viewBox='0 0 600 450'>"
+        +"<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='"+g[0]+"'/><stop offset='1' stop-color='"+g[1]+"'/></linearGradient></defs>"
+        +"<rect width='600' height='450' fill='url(#bg)'/>"
+        +"<circle cx='300' cy='210' r='135' fill='rgba(255,255,255,0.10)'/>"
+        +"<g transform='translate(210,120) scale(7.5)' fill='none' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>"+icon+"</g>"
+        +"</svg>";
+      return 'data:image/svg+xml,'+encodeURIComponent(svg);
+    }
+    function open(id){var m=document.getElementById(id);if(m)m.classList.add('open');}
+    function close(id){var m=document.getElementById(id);if(m)m.classList.remove('open');}
+
+    function renderCats(){
+      var wrap=document.getElementById('shopCats'); if(!wrap)return; var l=L();
+      wrap.innerHTML='';
+      CATS.forEach(function(c){
+        var b=document.createElement('button'); b.type='button';
+        b.className='cat-chip'+(activeCat===c.id?' active':'');
+        b.textContent=c[l];
+        b.addEventListener('click',function(){activeCat=c.id;renderCats();renderGrid();});
+        wrap.appendChild(b);
+      });
+    }
+    function renderGrid(){
+      var grid=document.getElementById('shopGrid'); if(!grid)return; var l=L();
+      grid.innerHTML='';
+      PRODUCTS.filter(function(p){return activeCat==='all'||p.cat===activeCat;}).forEach(function(p){
+        var cat=byCat(p.cat);
+        var card=document.createElement('article'); card.className='p-card';
+        card.innerHTML=`<div class='p-thumb'><img src='${imgUrl(p)}' alt='${p[l]}' loading='lazy'></div><div class='p-info'><span class='p-cat'>${cat?cat[l]:''}</span><h3 class='p-name'>${p[l]}</h3><span class='p-price'>${money(p.price)}</span><div class='p-actions'><button class='btn-primary' data-add='${p.id}'>${t('أضف للسلة','Add to cart')}</button><button class='btn-ghost' data-view='${p.id}'>${t('تفاصيل','Details')}</button></div></div>`;
+        grid.appendChild(card);
+      });
+      grid.querySelectorAll('[data-add]').forEach(function(b){b.addEventListener('click',function(){addToCart(+b.getAttribute('data-add'),1);openCart();});});
+      grid.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){openProduct(+b.getAttribute('data-view'));});});
+    }
+
+    function addToCart(id,qty){
+      var it=null; for(var i=0;i<cart.length;i++){if(cart[i].id===id){it=cart[i];break;}}
+      if(it){it.qty+=qty;}else{cart.push({id:id,qty:qty});}
+      renderCartCount();
+    }
+    function cartCount(){var n=0;cart.forEach(function(i){n+=i.qty;});return n;}
+    function cartTotal(){var s=0;cart.forEach(function(i){s+=byId(i.id).price*i.qty;});return s;}
+    function renderCartCount(){var el=document.getElementById('cartCount');if(el)el.textContent=cartCount();}
+
+    function openProduct(id){
+      var p=byId(id); if(!p)return; var l=L(); var cat=byCat(p.cat); var qty=1;
+      var body=document.getElementById('pmBody');
+      body.innerHTML=`<div class='pm-hero'><img src='${imgUrl(p)}' alt='${p[l]}'></div><span class='p-cat'>${cat[l]}</span><h2>${p[l]}</h2><p class='pm-desc'>${p['d'+l]}</p><div class='pm-price'>${money(p.price)}</div><div class='qty-row'><button type='button' data-q='dec'>-</button><span id='pmQty'>1</span><button type='button' data-q='inc'>+</button></div><div class='p-actions'><button class='btn-primary' id='pmBuy'>${t('اشتر الآن','Buy now')}</button><button class='btn-ghost' id='pmAdd'>${t('أضف للسلة','Add to cart')}</button></div>`;
+      body.querySelector('[data-q=dec]').addEventListener('click',function(){if(qty>1)qty--;body.querySelector('#pmQty').textContent=qty;});
+      body.querySelector('[data-q=inc]').addEventListener('click',function(){qty++;body.querySelector('#pmQty').textContent=qty;});
+      body.querySelector('#pmBuy').addEventListener('click',function(){addToCart(id,qty);close('productModal');openCheckout();});
+      body.querySelector('#pmAdd').addEventListener('click',function(){addToCart(id,qty);close('productModal');openCart();});
+      open('productModal');
+    }
+
+    function openCart(){
+      var l=L(); var body=document.getElementById('cartBody');
+      if(cart.length===0){body.innerHTML=`<p class='cart-empty'>${t('سلة التسوق فارغة.','Your cart is empty.')}</p>`;open('cartModal');return;}
+      var html='';
+      cart.forEach(function(it){var p=byId(it.id);
+        html+=`<div class='cart-item'><div class='ci-thumb'><img src='${imgUrl(p)}' alt=''></div><div class='ci-info'><div class='ci-name'>${p[l]}</div><div class='ci-price'>${money(p.price)}</div></div><div class='ci-qty'><button data-dec='${it.id}'>-</button><span>${it.qty}</span><button data-inc='${it.id}'>+</button></div><button class='ci-remove' data-rem='${it.id}'>🗑️</button></div>`;
+      });
+      html+=`<div class='cart-total'><span>${t('الإجمالي','Total')}</span><span>${money(cartTotal())}</span></div><button class='btn-primary w-full' id='goCheckout'>${t('إتمام الشراء','Checkout')}</button>`;
+      body.innerHTML=html;
+      body.querySelectorAll('[data-dec]').forEach(function(b){b.addEventListener('click',function(){chg(+b.getAttribute('data-dec'),-1);});});
+      body.querySelectorAll('[data-inc]').forEach(function(b){b.addEventListener('click',function(){chg(+b.getAttribute('data-inc'),1);});});
+      body.querySelectorAll('[data-rem]').forEach(function(b){b.addEventListener('click',function(){rem(+b.getAttribute('data-rem'));});});
+      body.querySelector('#goCheckout').addEventListener('click',function(){close('cartModal');openCheckout();});
+      open('cartModal');
+    }
+    function chg(id,d){for(var i=0;i<cart.length;i++){if(cart[i].id===id){cart[i].qty+=d;if(cart[i].qty<1)cart.splice(i,1);break;}}renderCartCount();openCart();}
+    function rem(id){for(var i=0;i<cart.length;i++){if(cart[i].id===id){cart.splice(i,1);break;}}renderCartCount();openCart();}
+
+    function openCheckout(){
+      var body=document.getElementById('checkoutBody');
+      if(cart.length===0){body.innerHTML=`<p class='cart-empty'>${t('سلة التسوق فارغة.','Your cart is empty.')}</p>`;open('checkoutModal');return;}
+      var l=L(); var rows='';
+      cart.forEach(function(it){var p=byId(it.id);rows+=`<div class='row'><span>${p[l]} × ${it.qty}</span><span>${money(p.price*it.qty)}</span></div>`;});
+      rows+=`<div class='row total'><span>${t('الإجمالي','Total')}</span><span>${money(cartTotal())}</span></div>`;
+      body.innerHTML=`<form id='coForm'><div class='field'><label>${t('الاسم الكامل','Full name')}</label><input required type='text'></div><div class='field'><label>${t('رقم الجوال','Phone number')}</label><input required type='tel'></div><div class='field'><label>${t('العنوان','Address')}</label><textarea required rows='2'></textarea></div><div class='field'><label>${t('طريقة الدفع','Payment method')}</label><select><option>${t('الدفع عند الاستلام','Cash on delivery')}</option><option>${t('تحويل بنكي','Bank transfer')}</option><option>${t('بطاقة مدى / فيزا','Mada / Visa card')}</option></select></div><div class='summary'>${rows}</div><button class='btn-primary w-full' type='submit'>${t('تأكيد الطلب','Confirm order')}</button></form>`;
+      body.querySelector('#coForm').addEventListener('submit',function(e){e.preventDefault();orderDone();});
+      open('checkoutModal');
+    }
+    function orderDone(){
+      cart=[];renderCartCount();
+      var body=document.getElementById('checkoutBody');
+      body.innerHTML=`<div class='success'><div class='tick'>✅</div><h2>${t('تم استلام طلبك','Order received')}</h2><p class='pm-desc'>${t('شكراً لك! هذا طلب تجريبي للعرض، وسيتم التواصل معك لتأكيد التفاصيل والتركيب.','Thank you! This is a demo order; we will contact you to confirm details and installation.')}</p><button class='btn-primary' id='okDone' type='button'>${t('حسناً','OK')}</button></div>`;
+      body.querySelector('#okDone').addEventListener('click',function(){close('checkoutModal');});
+    }
+
+    function apply(lang){
+      var d=document.documentElement; d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+      var els=document.querySelectorAll('[data-en]');
+      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang);if(v!==null)els[i].textContent=v;}
+      var b=document.getElementById('langToggle');if(b)b.textContent=(lang==='ar')?'EN':'ع';
+      try{localStorage.setItem('dibani_lang',lang);}catch(e){}
+      renderCats();renderGrid();renderCartCount();
+    }
+
+    document.addEventListener('DOMContentLoaded',function(){
+      var saved='ar';try{saved=localStorage.getItem('dibani_lang')||'ar';}catch(e){}
+      apply(saved);
+      var b=document.getElementById('langToggle');
+      if(b)b.addEventListener('click',function(){apply(L()==='ar'?'en':'ar');});
+      var cb=document.getElementById('cartBtn');if(cb)cb.addEventListener('click',openCart);
+      document.querySelectorAll('[data-close]').forEach(function(x){x.addEventListener('click',function(){var m=x.closest('.modal');if(m)m.classList.remove('open');});});
+      document.querySelectorAll('.modal').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open');});});
+      var tg=document.getElementById('navToggle');var nav=document.querySelector('.nav');
+      if(tg&&nav){tg.addEventListener('click',function(){var o=nav.classList.toggle('nav-open');tg.setAttribute('aria-expanded',o?'true':'false');});
+        var ls=nav.querySelectorAll('.links a:not(.drop-toggle)');
+        for(var i=0;i<ls.length;i++){ls[i].addEventListener('click',function(){nav.classList.remove('nav-open');tg.setAttribute('aria-expanded','false');});}
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

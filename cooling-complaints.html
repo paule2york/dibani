@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الشكاوى | التبريد والتكييف والإلكترونيات | مؤسسة فيصل الديباني</title>
+  <link rel="stylesheet" href="multipage.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><img src="assets/pdf-extract/image-05.jpg" alt="شعار المؤسسة"></a>
+    <div class="links">
+      <a href="about.html">عن المؤسسة</a>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle">المقاولات العامة ▾</a>
+        <div class="dropdown-menu">
+          <a href="contracting-new.html">الجديد</a>
+          <a href="contracting-repair.html">ترميم</a>
+          <a href="contracting-maintenance.html">صيانة</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle active">التبريد والتكييف والإلكترونيات ▾</a>
+        <div class="dropdown-menu">
+          <a href="cooling-buy.html">شراء جديد</a>
+          <a href="cooling-maintenance.html">صيانة</a>
+          <a href="cooling-complaints.html">الشكاوى</a>
+        </div>
+      </div>
+      <a href="security.html">الأنظمة الأمنية والذكية</a>
+      <a href="solar.html">الطاقة الشمسية</a>
+      <a href="work.html">أعمالنا</a>
+    </div>
+    <div class="nav-actions">
+      <div class="cta-group">
+        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
+        <a class="cta" href="contact.html">تواصل معنا</a>
+      </div>
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <header class="page-hero">
+    <div class="container hero-inner">
+      <div class="reveal">
+        <span class="eyebrow">التبريد والتكييف والإلكترونيات</span>
+        <h1>تقديم شكوى</h1>
+        <p class="lead">أخبرنا بتفاصيل الشكوى وسنعمل على معالجتها في أقرب وقت.</p>
+      </div>
+      <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/pdf-extract/image-05.jpg" alt=""></div></div>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container grid-2">
+      <div class="text-panel reveal">
+        <h2>شكاوى الأجهزة والخدمة</h2>
+        <p>حدد نوع الجهاز واشرح الشكوى بوضوح، وستصل مباشرة إلى المؤسسة للمتابعة والحل السريع.</p>
+        <ul class="fact-list">
+          <li>متابعة سريعة لكل شكوى</li>
+          <li>فريق صيانة متخصص</li>
+          <li>حلول موثوقة ومضمونة</li>
+        </ul>
+      </div>
+      <form class="lead-form card reveal" data-subject="شكوى - التبريد والتكييف والإلكترونيات" onsubmit="return sendReq(event)">
+        <label>الاسم
+          <input type="text" name="name" data-label="الاسم" required>
+        </label>
+        <label>رقم الجوال
+          <input type="tel" name="phone" data-label="رقم الجوال" required>
+        </label>
+        <label>المواعيد المتاحة
+          <input type="text" name="times" data-label="المواعيد المتاحة" placeholder="مثال: صباحاً 9-12">
+        </label>
+        <label>نوع الجهاز
+          <select name="device" data-label="نوع الجهاز" required>
+            <option value="">اختر الجهاز</option>
+            <option>مكيف شباك</option>
+            <option>مكيف اسبلت</option>
+            <option>مكيف دولاب</option>
+            <option>مكيف داكت</option>
+            <option>غسالة ملابس</option>
+            <option>غسالة صحون</option>
+            <option>مايكروويف</option>
+            <option>فرن</option>
+            <option>بوتاجاز</option>
+            <option>ثلاجة</option>
+            <option>فريزر</option>
+          </select>
+        </label>
+        <label>تفاصيل الشكوى
+          <textarea name="details" data-label="تفاصيل الشكوى" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="cta">إرسال الطلب</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <p>مؤسسة فيصل فهد سالم الديباني — جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+  <script>
+  function sendReq(e){
+    e.preventDefault();
+    var form = e.target;
+    var subject = form.getAttribute('data-subject') || 'طلب جديد';
+    var fields = form.querySelectorAll('[data-label]');
+    var lines = [];
+    for(var i=0;i<fields.length;i++){
+      var f = fields[i];
+      lines.push(f.getAttribute('data-label') + ': ' + f.value);
+    }
+    var body = lines.join('\n');
+    window.location.href = 'mailto:faisal@faisalaldibani.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    return false;
+  }
+  (function(){
+    var t=document.getElementById('navToggle');
+    var nav=document.querySelector('.nav');
+    if(t&&nav){
+      t.addEventListener('click',function(){
+        var o=nav.classList.toggle('nav-open');
+        t.setAttribute('aria-expanded',o?'true':'false');
+      });
+      var ls=nav.querySelectorAll('.links a:not(.drop-toggle)');
+      for(var i=0;i<ls.length;i++){
+        ls[i].addEventListener('click',function(){
+          nav.classList.remove('nav-open');
+          t.setAttribute('aria-expanded','false');
+        });
+      }
+    }
+  })();
+  </script>
+</body>
+</html>

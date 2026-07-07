@@ -1,0 +1,312 @@
+/* Homepage 3D nav - dropdown menus + refined navigation (matches inner-page menu style + IBM Plex font) */
+
+/* Keep the nav (and its dropdowns) above the 3D hero scene.
+   IMPORTANT: home4.css sets .site-nav overflow:hidden which was CLIPPING the
+   dropdown panels and the mobile menu (both open below the bar). Force it
+   visible here (home6 loads last) so the submenus/hamburger are never cut. */
+.site-nav {
+  z-index: 2000;
+  overflow: visible !important;
+}
+
+/* --- Unified pill styling for all top-level nav items (about, work, dropdown toggles) --- */
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-nav .nav-links > a,
+.site-nav .nav-links .drop-toggle {
+  font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: .95rem;
+  color: #e2f1fb;
+  padding: 10px 15px;
+  border-radius: 999px;
+  transition: background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+
+.site-nav .nav-links > a:hover,
+.site-nav .nav-links > a:focus-visible,
+.site-nav .nav-links .dropdown:hover > .drop-toggle,
+.site-nav .nav-links .dropdown:focus-within > .drop-toggle {
+  color: #ffffff;
+  background: rgba(14, 165, 233, .18);
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, .22);
+  outline: none;
+}
+
+/* --- Dropdown container --- */
+.nav-links .dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Invisible hover bridge so the menu does not disappear when the cursor
+   crosses the gap between the toggle and the panel */
+.nav-links .dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
+.nav-links .dropdown > .drop-toggle {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- Dropdown panel (kept the design the client liked) --- */
+.nav-links .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 232px;
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(2, 6, 23, .98), rgba(8, 47, 73, .96));
+  border: 1px solid rgba(125, 211, 252, .24);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, .45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  z-index: 2001;
+}
+
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-links .dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #dbeafe;
+  white-space: nowrap;
+  font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
+  font-weight: 500;
+  transition: background .18s ease, color .18s ease;
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: rgba(14, 165, 233, .18);
+  color: #ffffff;
+}
+
+/* --- Right side actions: joined Shop + Contact group, then language toggle --- */
+.site-nav .nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-nav .cta-group {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(8, 47, 73, .26);
+}
+
+.site-nav .cta-group .nav-cta {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: filter .2s ease;
+}
+
+.site-nav .cta-group .shop-cta {
+  background: linear-gradient(135deg, #fb923c, #ea580c);
+}
+
+.site-nav .cta-group .contact-cta {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  border-inline-start: 1px solid rgba(255, 255, 255, .28);
+}
+
+.site-nav .cta-group .nav-cta:hover {
+  transform: none;
+  filter: brightness(1.07);
+}
+
+/* --- Hamburger toggle (hidden on desktop) --- */
+.site-nav .nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(125, 211, 252, .3);
+  border-radius: 12px;
+  background: rgba(14, 165, 233, .12);
+  cursor: pointer;
+}
+
+.site-nav .nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: #e2f1fb;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.site-nav.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Mobile: hamburger + slide-down panel, dropdowns become static lists --- */
+@media (max-width: 920px) {
+  .site-nav .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(2, 6, 23, .98), rgba(8, 47, 73, .97));
+    border: 1px solid rgba(125, 211, 252, .24);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, .5);
+    z-index: 2001;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .site-nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  .site-nav .nav-links > a,
+  .site-nav .nav-links .drop-toggle {
+    text-align: start;
+  }
+
+  .nav-links .dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links .dropdown > .drop-toggle {
+    width: 100%;
+  }
+
+  .nav-links .dropdown::after {
+    content: none;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+    padding: 4px 10px 0;
+    min-width: 0;
+  }
+}
+
+/* --- Phones: shrink Shop/Contact buttons; show only the logo (hide the long
+   brand text) so the logo is clean and nothing overflows the bar --- */
+@media (max-width: 640px) {
+  .site-nav {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .site-nav .brand strong {
+    display: none;
+  }
+
+  .site-nav .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-nav .nav-actions {
+    gap: 6px;
+  }
+
+  .site-nav .cta-group .nav-cta {
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: .78rem;
+    gap: 5px;
+  }
+
+  .site-nav .cta-group .nav-cta .icon {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+  }
+
+  .site-nav .lang-toggle {
+    padding: 6px 9px;
+    font-size: .8rem;
+  }
+
+  .site-nav .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* === FIX: 4th floating card (Security & Smart Systems) was force-hidden by
+   home5.css ( .hero-stage > .orbit-three { display:none } ). home6 loads last,
+   so re-show it here and place it in the empty center spot of the hero. === */
+.hero-stage > .orbit-three {
+  display: grid !important;
+  top: 52% !important;
+  right: 34% !important;
+  left: auto !important;
+  bottom: auto !important;
+  animation: floatOrbitCard 4.6s ease-in-out infinite !important;
+  animation-delay: .6s !important;
+}
+
+@media (max-width: 920px) {
+  .hero-stage > .orbit-three {
+    top: 55% !important;
+    right: 30% !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-stage > .orbit-three {
+    top: 56% !important;
+    right: 24% !important;
+  }
+}

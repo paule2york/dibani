@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الجديد | المقاولات العامة | مؤسسة فيصل الديباني</title>
+  <link rel="stylesheet" href="multipage.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><img src="assets/pdf-extract/image-05.jpg" alt="شعار المؤسسة"></a>
+    <div class="links">
+      <a href="about.html">عن المؤسسة</a>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle active">المقاولات العامة ▾</a>
+        <div class="dropdown-menu">
+          <a href="contracting-new.html">الجديد</a>
+          <a href="contracting-repair.html">ترميم</a>
+          <a href="contracting-maintenance.html">صيانة</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle">التبريد والتكييف والإلكترونيات ▾</a>
+        <div class="dropdown-menu">
+          <a href="cooling-buy.html">شراء جديد</a>
+          <a href="cooling-maintenance.html">صيانة</a>
+          <a href="cooling-complaints.html">الشكاوى</a>
+        </div>
+      </div>
+      <a href="security.html">الأنظمة الأمنية والذكية</a>
+      <a href="solar.html">الطاقة الشمسية</a>
+      <a href="work.html">أعمالنا</a>
+    </div>
+    <div class="nav-actions">
+      <div class="cta-group">
+        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
+        <a class="cta" href="contact.html">تواصل معنا</a>
+      </div>
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <header class="page-hero">
+    <div class="container hero-inner">
+      <div class="reveal">
+        <span class="eyebrow">المقاولات العامة</span>
+        <h1>طلب عمل جديد</h1>
+        <p class="lead">أدخل تفاصيل العمل الجديد المطلوب وسنعاود التواصل معك في الوقت المناسب.</p>
+      </div>
+      <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/pdf-extract/image-05.jpg" alt=""></div></div>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container grid-2">
+      <div class="text-panel reveal">
+        <h2>أعمال مقاولات جديدة</h2>
+        <p>املأ النموذج ببياناتك ونوع العمل المطلوب، وسيصل الطلب مباشرة إلى فريق المؤسسة عبر البريد.</p>
+        <ul class="fact-list">
+          <li>تنفيذ أعمال المقاولات العامة</li>
+          <li>معاينة وتسعير واضح</li>
+          <li>متابعة مراحل العمل حتى التسليم</li>
+        </ul>
+      </div>
+      <form class="lead-form card reveal" data-subject="طلب جديد - المقاولات العامة" onsubmit="return sendReq(event)">
+        <label>الاسم<input type="text" data-label="الاسم" placeholder="اسم العميل أو الشركة" required></label>
+        <label>رقم الجوال<input type="tel" data-label="رقم الجوال" placeholder="05xxxxxxxx" required></label>
+        <label>الوقت المناسب للاتصال<input type="text" data-label="الوقت المناسب للاتصال" placeholder="مثال: صباحاً من 9 إلى 12"></label>
+        <label>نوع العمل<input type="text" data-label="نوع العمل" placeholder="مثال: بناء، تشطيب، إضافة"></label>
+        <label>إجمالي أمتار العمل<input type="text" data-label="إجمالي أمتار العمل" placeholder="المساحة بالمتر"></label>
+        <label>ملاحظة<textarea data-label="ملاحظة" placeholder="أي تفاصيل إضافية"></textarea></label>
+        <button class="cta" type="submit">إرسال الطلب</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer"><div class="container"><span>© 2026 مؤسسة فيصل فهد سالم الديباني</span><span>المقاولات العامة — الجديد</span></div></footer>
+  <script>
+    function sendReq(e){
+      e.preventDefault();
+      var form = e.currentTarget;
+      var subject = form.getAttribute('data-subject') || 'طلب جديد';
+      var parts = [];
+      var fields = form.querySelectorAll('[data-label]');
+      for (var i = 0; i < fields.length; i++) {
+        var el = fields[i];
+        parts.push(el.getAttribute('data-label') + ': ' + (el.value ? el.value : '-'));
+      }
+      var body = parts.join('\n');
+      window.location.href = 'mailto:faisal@faisalaldibani.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      return false;
+    }
+    (function(){
+      var t=document.getElementById('navToggle');
+      var nav=document.querySelector('.nav');
+      if(t&&nav){
+        t.addEventListener('click',function(){
+          var o=nav.classList.toggle('nav-open');
+          t.setAttribute('aria-expanded',o?'true':'false');
+        });
+        var ls=nav.querySelectorAll('.links a:not(.drop-toggle)');
+        for(var i=0;i<ls.length;i++){
+          ls[i].addEventListener('click',function(){
+            nav.classList.remove('nav-open');
+            t.setAttribute('aria-expanded','false');
+          });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

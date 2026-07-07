@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-ar="عن المؤسسة | مؤسسة فيصل الديباني" data-en="About | Faisal Aldibani Company">عن المؤسسة | مؤسسة فيصل الديباني</title>
+  <link rel="stylesheet" href="multipage.css">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    /* About: animated img06 media panel (replaces logo orb + PDF chip) */
+    .media-panel { min-height: 460px; isolation: isolate; }
+    .media-panel .mp-photo {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 1;
+      animation: mpZoom 14s ease-in-out infinite alternate;
+    }
+    @keyframes mpZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+    .media-panel .mp-tint {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: linear-gradient(160deg, rgba(2,6,23,.30), rgba(8,47,73,.20) 55%, rgba(2,6,23,.36));
+    }
+    .media-panel .mp-scan {
+      position: absolute; left: 6%; right: 6%; top: 10%; height: 3px; z-index: 3;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(125,211,252,.95), rgba(249,115,22,.85), transparent);
+      box-shadow: 0 0 22px rgba(125,211,252,.6);
+      animation: mpScan 5s ease-in-out infinite;
+    }
+    @keyframes mpScan { 0%, 100% { transform: translateY(0); opacity: .15; } 50% { transform: translateY(360px); opacity: .95; } }
+    .media-panel .mp-ring {
+      position: absolute; right: 22px; top: 22px; width: 70px; height: 70px; z-index: 3;
+      border-radius: 50%; border: 2px dashed rgba(125,211,252,.6);
+      border-top-color: rgba(249,115,22,.85);
+      animation: spin 9s linear infinite;
+    }
+    .media-panel .mp-ring.r2 {
+      right: 34px; top: 34px; width: 46px; height: 46px;
+      border-style: solid; border-color: rgba(249,115,22,.4);
+      border-top-color: rgba(125,211,252,.85);
+      animation: spin 5s linear infinite reverse;
+    }
+    .media-panel .mp-badge {
+      position: absolute; left: 20px; bottom: 20px; z-index: 3;
+      padding: 9px 18px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--sky), var(--orange));
+      color: #fff; font-weight: 800; font-size: .9rem;
+      box-shadow: 0 12px 26px rgba(14,165,233,.42);
+      animation: afFloat 4s ease-in-out infinite alternate;
+    }
+    .media-panel .mp-corner {
+      position: absolute; width: 26px; height: 26px; z-index: 3;
+      border: 2px solid rgba(125,211,252,.55);
+    }
+    .media-panel .mp-corner.tl { left: 16px; top: 16px; border-right: 0; border-bottom: 0; }
+    .media-panel .mp-corner.br { right: 16px; bottom: 16px; border-left: 0; border-top: 0; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="index.html"><img src="assets/logo.png" alt="شعار المؤسسة"></a>
+    <div class="links">
+      <a class="active" href="about.html" data-ar="عن المؤسسة" data-en="About">عن المؤسسة</a>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle" data-ar="المقاولات العامة ▾" data-en="General Contracting ▾">المقاولات العامة ▾</a>
+        <div class="dropdown-menu">
+          <a href="contracting-new.html" data-ar="الجديد" data-en="New">الجديد</a>
+          <a href="contracting-repair.html" data-ar="ترميم" data-en="Renovation">ترميم</a>
+          <a href="contracting-maintenance.html" data-ar="صيانة" data-en="Maintenance">صيانة</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle" data-ar="التبريد والتكييف والإلكترونيات ▾" data-en="Cooling, AC & Electronics ▾">التبريد والتكييف والإلكترونيات ▾</a>
+        <div class="dropdown-menu">
+          <a href="cooling-buy.html" data-ar="شراء جديد" data-en="New Purchase">شراء جديد</a>
+          <a href="cooling-maintenance.html" data-ar="صيانة" data-en="Maintenance">صيانة</a>
+          <a href="cooling-complaints.html" data-ar="الشكاوى" data-en="Complaints">الشكاوى</a>
+        </div>
+      </div>
+      <a href="security.html" data-ar="الأنظمة الأمنية والذكية" data-en="Security & Smart Systems">الأنظمة الأمنية والذكية</a>
+      <a href="solar.html" data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</a>
+      <a href="work.html" data-ar="أعمالنا" data-en="Our Work">أعمالنا</a>
+    </div>
+    <div class="nav-actions">
+      <div class="cta-group">
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوّق الآن" data-en="Shop Now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <header class="page-hero">
+    <div class="container hero-inner">
+      <div class="reveal">
+        <span class="eyebrow" data-ar="عن المؤسسة" data-en="About Faisal Aldibani">عن المؤسسة</span>
+        <h1 data-ar="نُمكّن الشركات والأفراد من تجربة أعلى معايير حلول المباني الذكية." data-en="We enable businesses and individuals to experience the highest standard of smart building solutions.">نُمكّن الشركات والأفراد من تجربة أعلى معايير حلول المباني الذكية.</h1>
+        <p class="lead" data-ar="في مؤسسة فيصل فهد سالم الديباني لا نبني مجرد هياكل، بل نبني أسساً متينة للمستقبل — عبر حلول بناء مبتكرة ومستدامة، وأنظمة طاقة شمسية، وأنظمة أمن ومراقبة، وحلول تكييف وتبريد، مع الالتزام بأعلى معايير الجودة والسلامة." data-en="At Faisal Fahad Salem Aldibani Company we don't just build structures — we build enduring foundations for the future, through innovative sustainable construction, solar power, security and smart systems, and cooling solutions, all held to the highest standards of quality and safety.">في مؤسسة فيصل فهد سالم الديباني لا نبني مجرد هياكل، بل نبني أسساً متينة للمستقبل — عبر حلول بناء مبتكرة ومستدامة، وأنظمة طاقة شمسية، وأنظمة أمن ومراقبة، وحلول تكييف وتبريد، مع الالتزام بأعلى معايير الجودة والسلامة.</p>
+      </div>
+      <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container rich-split">
+      <div class="text-panel reveal">
+        <span class="eyebrow" data-ar="نبذة عن الشركة" data-en="Company Overview">نبذة عن الشركة</span>
+        <h2 data-ar="شريكك الموثوق في المقاولات العامة وحلول المباني الذكية." data-en="Your trusted partner in general contracting and smart building solutions.">شريكك الموثوق في المقاولات العامة وحلول المباني الذكية.</h2>
+        <p data-ar="منذ التأسيس، رسّخ التزامنا بالنزاهة والحِرفية العالية ورضا العملاء إرثنا في جميع أنحاء المنطقة. نقدّم منظومة متكاملة تجمع بين البناء المستدام والاتصال الرقمي المتقدم، بما يدعم رؤية السعودية 2030 ويسهم في النمو الاقتصادي للمملكة." data-en="Since our founding, our commitment to integrity, superior craftsmanship and client satisfaction has defined our legacy across the region. We deliver an integrated ecosystem that combines sustainable construction with advanced digital connectivity — directly supporting Saudi Vision 2030 and the Kingdom's economic growth.">منذ التأسيس، رسّخ التزامنا بالنزاهة والحِرفية العالية ورضا العملاء إرثنا في جميع أنحاء المنطقة. نقدّم منظومة متكاملة تجمع بين البناء المستدام والاتصال الرقمي المتقدم، بما يدعم رؤية السعودية 2030 ويسهم في النمو الاقتصادي للمملكة.</p>
+        <ul class="fact-list">
+          <li data-ar="أعمال البناء والمقاولات — سكني وتجاري" data-en="Construction & contracting — residential & commercial">أعمال البناء والمقاولات — سكني وتجاري</li>
+          <li data-ar="أنظمة كاميرات المراقبة الرقمية والذكية" data-en="Digital & smart CCTV systems">أنظمة كاميرات المراقبة الرقمية والذكية</li>
+          <li data-ar="أنظمة الطاقة الشمسية الصناعية والمنزلية" data-en="Industrial & home solar power systems">أنظمة الطاقة الشمسية الصناعية والمنزلية</li>
+          <li data-ar="خدمات التكييف والتبريد والصيانة" data-en="Air-conditioning, refrigeration & maintenance">خدمات التكييف والتبريد والصيانة</li>
+          <li data-ar="الأنظمة الأمنية والذكية والتحكم في الدخول" data-en="Security, smart & access-control systems">الأنظمة الأمنية والذكية والتحكم في الدخول</li>
+        </ul>
+      </div>
+      <div class="media-panel reveal">
+        <img class="mp-photo" src="assets/img06.png" alt="مؤسسة فيصل الديباني">
+        <span class="mp-tint" aria-hidden="true"></span>
+        <span class="mp-scan" aria-hidden="true"></span>
+        <span class="mp-ring" aria-hidden="true"></span>
+        <span class="mp-ring r2" aria-hidden="true"></span>
+        <span class="mp-corner tl" aria-hidden="true"></span>
+        <span class="mp-corner br" aria-hidden="true"></span>
+        <span class="mp-badge" data-ar="مؤسسة فيصل الديباني" data-en="Faisal Aldibani">مؤسسة فيصل الديباني</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 data-ar="رؤيتنا ومهمتنا وقيمنا" data-en="Our vision, mission & values">رؤيتنا ومهمتنا وقيمنا</h2>
+        <p data-ar="المبادئ التي توجّه كل مشروع ننفّذه، وتحوّل الرؤى المعمارية إلى واقع ملموس." data-en="The principles that guide every project we deliver and turn architectural visions into tangible reality.">المبادئ التي توجّه كل مشروع ننفّذه، وتحوّل الرؤى المعمارية إلى واقع ملموس.</p>
+      </div>
+      <div class="about-feature-grid">
+        <div class="af-card reveal">
+          <div class="af-visual" aria-hidden="true">
+            <span class="af-ring"></span>
+            <span class="af-ring r2"></span>
+            <span class="af-scan"></span>
+            <span class="af-ico">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10"/><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10"/></svg>
+            </span>
+          </div>
+          <h3 data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h3>
+          <p data-ar="أن نقود قطاع المقاولات العامة عبر التوسع في مشاريع متقدمة ومستعدة للمستقبل تدعم رؤية السعودية 2030، بالتمسك بأعلى معايير الجودة والكفاءة والهندسة الذكية." data-en="To lead the general contracting sector by expanding into advanced, future-ready projects that support Saudi Vision 2030 — upholding the highest standards of quality, efficiency and smart engineering.">أن نقود قطاع المقاولات العامة عبر التوسع في مشاريع متقدمة ومستعدة للمستقبل تدعم رؤية السعودية 2030، بالتمسك بأعلى معايير الجودة والكفاءة والهندسة الذكية.</p>
+        </div>
+        <div class="af-card reveal">
+          <div class="af-visual" aria-hidden="true">
+            <span class="af-ring"></span>
+            <span class="af-ring r2"></span>
+            <span class="af-scan"></span>
+            <span class="af-ico">
+              <svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><circle cx="12" cy="12" r="4"/></svg>
+            </span>
+          </div>
+          <h3 data-ar="مهمتنا" data-en="Our Mission">مهمتنا</h3>
+          <p data-ar="الارتقاء بتجربة البناء عبر تقديم خدمات عالية القيمة تتجاوز توقعات عملائنا، من خلال تنسيق دقيق بين مواردنا الداخلية ومقاولينا وموردينا الموثوقين، وبشفافية ونزاهة ومهنية تامة." data-en="To elevate the construction experience by delivering value-driven services that outperform client expectations — through precise alignment of our internal resources, vetted subcontractors and trusted suppliers, with absolute transparency and integrity.">الارتقاء بتجربة البناء عبر تقديم خدمات عالية القيمة تتجاوز توقعات عملائنا، من خلال تنسيق دقيق بين مواردنا الداخلية ومقاولينا وموردينا الموثوقين، وبشفافية ونزاهة ومهنية تامة.</p>
+        </div>
+        <div class="af-card reveal">
+          <div class="af-visual" aria-hidden="true">
+            <span class="af-ring"></span>
+            <span class="af-ring r2"></span>
+            <span class="af-scan"></span>
+            <span class="af-ico">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+          </div>
+          <h3 data-ar="قيمنا" data-en="Our Values">قيمنا</h3>
+          <p data-ar="نضع رضا العميل في المقام الأول عبر تطبيق معايير جودة عالية بالاحترافية والمصداقية والنزاهة والشفافية والوضوح، ومن خلال الابتكار والإبداع وسرعة التنفيذ." data-en="We put client satisfaction first by applying high quality standards — professionalism, credibility, honesty, transparency and clarity — driven by innovation, creativity and speed of implementation.">نضع رضا العميل في المقام الأول عبر تطبيق معايير جودة عالية بالاحترافية والمصداقية والنزاهة والشفافية والوضوح، ومن خلال الابتكار والإبداع وسرعة التنفيذ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section chair-band">
+    <div class="container chair-wrap">
+      <div class="chair-photo reveal">
+        <img src="assets/chairman.png" alt="صورة المؤسس فيصل فهد سالم الديباني" onerror="this.src='assets/chairman.jpg'">
+        <span class="chair-badge" data-ar="المؤسس" data-en="Founder">المؤسس</span>
+      </div>
+      <div class="chair-copy reveal">
+        <span class="eyebrow" data-ar="كلمة المؤسس" data-en="Message from the Founder">كلمة المؤسس</span>
+        <p class="chair-quote" data-ar="في مؤسسة فيصل فهد سالم الديباني لا نبني مجرد هياكل، بل نبني علاقات دائمة. النجاح الحقيقي لا يُقاس فقط بالمشاريع التي ننجزها، بل بالثقة التي نكسبها من عملائنا وشركائنا والمجتمعات التي نخدمها. فريقنا المتفاني هو رأس مالنا الحقيقي، ونتطلع إلى بناء غدٍ أفضل وأكثر استدامة للمملكة." data-en="At Faisal Fahad Salem Aldibani Company we don't just build structures — we build lasting relationships. True success is not measured only by the projects we complete, but by the trust we earn from our clients, partners and the communities we serve. Our dedicated team is our greatest asset, and we look forward to building a better, more sustainable tomorrow for the Kingdom.">في مؤسسة فيصل فهد سالم الديباني لا نبني مجرد هياكل، بل نبني علاقات دائمة. النجاح الحقيقي لا يُقاس فقط بالمشاريع التي ننجزها، بل بالثقة التي نكسبها من عملائنا وشركائنا والمجتمعات التي نخدمها. فريقنا المتفاني هو رأس مالنا الحقيقي، ونتطلع إلى بناء غدٍ أفضل وأكثر استدامة للمملكة.</p>
+        <div class="chair-name">
+          <span class="role" data-ar="المؤسس والرئيس التنفيذي" data-en="Founder & CEO">المؤسس والرئيس التنفيذي</span>
+          <strong data-ar="فيصل فهد سالم الديباني" data-en="Faisal Fahad Salem Al-Dibani">فيصل فهد سالم الديباني</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer"><div class="container"><span data-ar="© 2026 مؤسسة فيصل فهد سالم الديباني" data-en="© 2026 Faisal Fahad Salem Aldibani Company">© 2026 مؤسسة فيصل فهد سالم الديباني</span><a class="dev-by" href="https://arabixweb.com" target="_blank" rel="noopener"><span data-ar="طُوِّر بواسطة" data-en="Developed by">طُوِّر بواسطة</span><img src="https://www.arabixweb.com/assets/logo-white.png" alt="Arabix"></a></div></footer>
+  <script>
+  (function(){
+    function apply(lang){
+      var d=document.documentElement;
+      d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+      var els=document.querySelectorAll('[data-en]');
+      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+      var phs=document.querySelectorAll('[data-en-ph]');
+      for(var j=0;j<phs.length;j++){var p=phs[j].getAttribute('data-'+lang+'-ph'); if(p!==null) phs[j].setAttribute('placeholder',p);}
+      var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+      try{localStorage.setItem('dibani_lang',lang);}catch(e){}
+    }
+    var saved='ar'; try{saved=localStorage.getItem('dibani_lang')||'ar';}catch(e){}
+    document.addEventListener('DOMContentLoaded',function(){
+      apply(saved);
+      var b=document.getElementById('langToggle');
+      if(b) b.addEventListener('click',function(){var cur=(document.documentElement.lang==='en')?'en':'ar'; apply(cur==='ar'?'en':'ar');});
+    });
+  })();
+  (function(){
+    var t=document.getElementById('navToggle');
+    var nav=document.querySelector('.nav');
+    if(t&&nav){
+      t.addEventListener('click',function(){
+        var o=nav.classList.toggle('nav-open');
+        t.setAttribute('aria-expanded',o?'true':'false');
+      });
+      var ls=nav.querySelectorAll('.links a:not(.drop-toggle)');
+      for(var i=0;i<ls.length;i++){
+        ls[i].addEventListener('click',function(){
+          nav.classList.remove('nav-open');
+          t.setAttribute('aria-expanded','false');
+        });
+      }
+    }
+  })();
+  </script>
+</body>
+</html>

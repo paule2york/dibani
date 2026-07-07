@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مؤسسة فيصل فهد سالم الديباني</title>
+  <meta name="description" content="موقع تعريفي لمؤسسة فيصل فهد سالم الديباني لأعمال المقاولات والتكييف والتبريد.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home2.css">
+  <link rel="stylesheet" href="home3.css">
+  <link rel="stylesheet" href="home4.css">
+  <link rel="stylesheet" href="home5.css">
+  <link rel="stylesheet" href="home6.css">
+  <link rel="stylesheet" href="home7.css">
+  <style>
+    .contact { isolation: isolate; }
+    .contact .contact-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; pointer-events: none;
+    }
+    .contact .contact-video-tint {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(8,47,73,.72), rgba(6,30,47,.66));
+      pointer-events: none;
+    }
+    .contact::before { z-index: 2; }
+    .contact .contact-grid { position: relative; z-index: 3; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="التنقل الرئيسي">
+    <a class="brand" href="#top" aria-label="مؤسسة فيصل فهد سالم الديباني">
+      <img src="assets/logo.png" alt="شعار مؤسسة فيصل فهد سالم الديباني">
+      <strong data-i18n="brand">مؤسسة فيصل فهد سالم الديباني</strong>
+    </a>
+    <div class="nav-links" aria-label="روابط الموقع">
+      <a href="about.html" data-i18n="nav_about">عن المؤسسة</a>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle" data-i18n="menu_contracting">المقاولات العامة ▾</a>
+        <div class="dropdown-menu">
+          <a href="contracting-new.html" data-i18n="menu_contracting_new">الجديد</a>
+          <a href="contracting-repair.html" data-i18n="menu_contracting_repair">ترميم</a>
+          <a href="contracting-maintenance.html" data-i18n="menu_contracting_maintenance">صيانة</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="drop-toggle" data-i18n="menu_cooling">التبريد والتكييف والإلكترونيات ▾</a>
+        <div class="dropdown-menu">
+          <a href="cooling-buy.html" data-i18n="menu_cooling_buy">شراء جديد</a>
+          <a href="cooling-maintenance.html" data-i18n="menu_cooling_maintenance">صيانة</a>
+          <a href="cooling-complaints.html" data-i18n="menu_cooling_complaints">الشكاوى</a>
+        </div>
+      </div>
+      <a href="security.html" data-ar="الأنظمة الأمنية والذكية" data-en="Security & Smart Systems">الأنظمة الأمنية والذكية</a>
+      <a href="solar.html" data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</a>
+      <a href="work.html" data-i18n="nav_work">أعمالنا</a>
+    </div>
+    <div class="nav-actions">
+      <div class="cta-group">
+        <a class="nav-cta shop-cta" href="shop.html">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span data-i18n="nav_shop">تسوق الآن</span>
+        </a>
+        <a class="nav-cta contact-cta" href="contact.html">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          <span data-i18n="nav_contact">تواصل معنا</span>
+        </a>
+      </div>
+      <button class="lang-toggle" type="button" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l8-4 6 3v15"/><path d="M9 21v-8h6v8"/></svg>
+            <span data-i18n="hero_eyebrow">مقاولات، تكييف وتبريد</span>
+          </p>
+          <h1 id="hero-title" data-i18n="hero_title">مؤسسة فيصل الديباني</h1>
+          <p class="lead" data-i18n="hero_lead">مؤسسة متخصصة في أعمال المقاولات العامة، أنظمة التكييف، وحلول التبريد، بتقديم عملي واضح يبدأ من المعاينة وينتهي بتسليم منظم ومتابعة موثوقة.</p>
+          <div class="hero-actions">
+            <a class="button" href="services.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l6 6-6 6"/><path d="M20 12H4"/></svg>
+              <span data-i18n="hero_services">استعرض الخدمات</span>
+            </a>
+            <a class="button secondary" href="contact.html">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+              <span data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-stage" aria-label="مشهد ثلاثي الأبعاد لشعار المؤسسة">
+          <canvas id="three-scene"></canvas>
+          <canvas id="fallback-scene" aria-hidden="true"></canvas>
+          <div class="mega-scene" aria-hidden="true">
+            <div class="iso-floor"></div>
+            <div class="tower one"><span></span></div>
+            <div class="tower two"><span></span></div>
+            <div class="tower three"><span></span></div>
+            <div class="duct"></div>
+            <div class="cooling-unit"></div>
+            <div class="crane">
+              <span class="mast"></span>
+              <span class="arm"></span>
+              <span class="hook"></span>
+            </div>
+            <div class="scan-line"></div>
+            <div class="label-beam">
+              <strong>3D Project System</strong>
+              <span>مقاولات + تكييف + تبريد</span>
+            </div>
+            <div class="holo-panel panel-a"><strong>Contracting</strong><span>Site execution</span></div>
+            <div class="holo-panel panel-b"><strong>HVAC</strong><span>Cooling systems</span></div>
+            <div class="holo-panel panel-c"><strong>Quality</strong><span>Delivery control</span></div>
+          </div>
+          <div class="portal-scene" aria-hidden="true">
+            <div class="portal-glow"></div>
+            <div class="portal-rings">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="core-object">
+              <div class="core-face front">
+                <img src="assets/pdf-extract/image-05.jpg" alt="">
+              </div>
+              <div class="core-face back"></div>
+              <div class="core-face right"></div>
+              <div class="core-face left"></div>
+              <div class="core-face top"></div>
+              <div class="core-face bottom"></div>
+            </div>
+            <div class="center-badge">
+              <span class="badge-halo"></span>
+              <img src="assets/pdf-extract/image-05.jpg" alt="شعار مؤسسة فيصل فهد سالم الديباني">
+            </div>
+            <div class="tech-ribbon ribbon-one"></div>
+            <div class="tech-ribbon ribbon-two"></div>
+            <div class="tech-ribbon ribbon-three"></div>
+          </div>
+          <div class="logo-orbit" aria-hidden="true">
+            <div class="ring"></div>
+            <div class="logo-plate">
+              <img src="assets/pdf-extract/image-05.jpg" alt="">
+            </div>
+          </div>
+          <div class="floating-spec one">
+            <strong>4</strong>
+            <span>مجالات عمل رئيسية</span>
+          </div>
+          <div class="floating-spec two">
+            <strong>1-5</strong>
+            <span>سنوات خبرة مذكورة بالبروفايل</span>
+          </div>
+          <div class="orbit-card orbit-one" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+            <strong data-ar="المقاولات العامة" data-en="General Contracting">المقاولات العامة</strong>
+          </div>
+          <div class="orbit-card orbit-two" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M4.93 4.93l14.14 14.14"/><path d="M2 12h20"/><path d="M4.93 19.07 19.07 4.93"/></svg>
+            <strong data-ar="التبريد والتكييف والإلكترونية" data-en="Cooling, AC & Electronics">التبريد والتكييف والإلكترونية</strong>
+          </div>
+          <div class="orbit-card orbit-three" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <strong data-ar="الأنظمة الأمنية والذكية" data-en="Security & Smart Systems">الأنظمة الأمنية والذكية</strong>
+          </div>
+          <div class="orbit-card orbit-four" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/></svg>
+            <strong data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="signature-quote" data-reveal>
+      <div class="sig-inner">
+        <svg class="sig-fp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M6.5 13a5.5 5.5 0 0 1 11 0c0 1 0 2-.3 3"/><path d="M9 12.5a3 3 0 0 1 6 0c0 2.5-.4 4.5-1 6.5"/><path d="M12 12v2c0 2.5-.5 4.5-1.2 6.3"/></svg>
+        <p class="sig-line" data-ar="عملنا هو بصمتنا" data-en="Our work is our signature">عملنا هو بصمتنا</p>
+        <svg class="sig-stroke" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sigGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7dd3fc"/><stop offset="0.6" stop-color="#0ea5e9"/><stop offset="1" stop-color="#fb923c"/></linearGradient></defs><path d="M12 26 C 120 6, 210 8, 300 20 S 470 36, 588 12"/></svg>
+      </div>
+    </div>
+
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-text" data-reveal>
+          <div>
+            <p class="eyebrow">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span data-i18n="about_eyebrow">عن المؤسسة</span>
+            </p>
+            <h2 data-i18n="about_title">تنفيذ هندسي هادئ وواضح من أول زيارة حتى التسليم.</h2>
+          </div>
+          <p data-i18n="about_body">حسب البروفايل المرفق، مؤسسة فيصل فهد سالم الديباني تعمل في جميع أعمال المقاولات، وأعمال التكييف والتبريد. صممت الصفحة لتبرز الثقة، الجدية، وسهولة التواصل مع طابع بصري حديث.</p>
+          <div class="feature-list">
+            <div class="feature">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+              <div><strong data-i18n="feature_contracting_title">أعمال المقاولات</strong><span data-i18n="feature_contracting_body">تنفيذ وتجهيزات ومتابعة مراحل العمل.</span></div>
+            </div>
+            <div class="feature">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M4.93 4.93l14.14 14.14"/><path d="M2 12h20"/><path d="M4.93 19.07 19.07 4.93"/></svg>
+              <div><strong data-i18n="feature_hvac_title">التكييف والتبريد</strong><span data-i18n="feature_hvac_body">حلول عملية للتركيب والصيانة والتجهيز.</span></div>
+            </div>
+            <div class="feature">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+              <div><strong data-i18n="feature_process_title">تنظيم واضح</strong><span data-i18n="feature_process_body">نطاق عمل، مراحل، وتسليم قابل للقياس.</span></div>
+            </div>
+            <div class="feature">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><strong data-i18n="feature_quality_title">جودة موثوقة</strong><span data-i18n="feature_quality_body">واجهة تعكس احترافية المؤسسة أمام العملاء.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-panel service-showcase" aria-hidden="true" data-reveal>
+          <img class="showcase-photo" src="assets/img05.png" alt="">
+          <div class="showcase-tint"></div>
+          <div class="showcase-grid"></div>
+          <div class="showcase-base"></div>
+          <div class="showcase-building">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mini-crane">
+            <span class="crane-mast"></span>
+            <span class="crane-arm"></span>
+            <span class="crane-cable"></span>
+          </div>
+          <div class="showcase-ac">
+            <span class="fan"></span>
+            <span class="vent v1"></span>
+            <span class="vent v2"></span>
+          </div>
+          <div class="pipe-network">
+            <span class="pipe p1"></span>
+            <span class="pipe p2"></span>
+            <span class="pipe p3"></span>
+            <span class="node n1"></span>
+            <span class="node n2"></span>
+          </div>
+          <div class="tool-chip chip-one">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.7 6.3 3 3"/><path d="M5 19l9.7-9.7"/><path d="M16 5l3 3-2 2-3-3z"/></svg>
+            <span data-i18n="chip_execution">تنفيذ</span>
+          </div>
+          <div class="tool-chip chip-two">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>
+            <span data-i18n="chip_cooling">تبريد</span>
+          </div>
+          <div class="scan-beam"></div>
+          <div class="air air-one"></div>
+          <div class="air air-two"></div>
+          <div class="air air-three"></div>
+          <div class="showcase-badge">
+            <strong data-i18n="showcase_title">مقاولات + تكييف</strong>
+            <span data-i18n="showcase_body">خدمات ميدانية متكاملة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership" class="section alt leadership-section">
+      <div class="leader-wrap">
+        <div class="leader-photo" data-reveal>
+          <img src="assets/chairman.png" alt="صورة المؤسس فيصل فهد سالم الديباني" onerror="this.style.display='none'">
+        </div>
+        <div class="leader-card" data-reveal>
+          <p class="leader-quote" data-ar="نلتزم بالجودة والانضباط في كل مشروع، من المعاينة حتى التسليم، لأن عملنا هو بصمتنا وثقة عملائنا هي رأس مالنا الحقيقي." data-en="We commit to quality and discipline in every project, from inspection to handover, because our work is our signature and our clients trust is our true capital.">نلتزم بالجودة والانضباط في كل مشروع، من المعاينة حتى التسليم، لأن عملنا هو بصمتنا وثقة عملائنا هي رأس مالنا الحقيقي.</p>
+          <div class="leader-meta">
+            <div class="leader-name">
+              <span class="leader-role" data-ar="المؤسس والرئيس التنفيذي /" data-en="Founder & CEO /">المؤسس والرئيس التنفيذي /</span>
+              <strong data-ar="فيصل فهد سالم الديباني" data-en="Faisal Fahad Salem Al-Dibani">فيصل فهد سالم الديباني</strong>
+            </div>
+            <a class="leader-btn" href="about.html">
+              <span data-ar="نبذة عن المؤسسة" data-en="About the company">نبذة عن المؤسسة</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 data-i18n="services_title">خدمات مبنية حول احتياج الموقع، لا حول قالب جاهز.</h2>
+          <p data-i18n="services_body">التقسيم مأخوذ من محتوى البروفايل: مقاولات، تكييف، تبريد. كل خدمة معروضة بلغة مباشرة تناسب عميل يبحث عن جهة تنفيذ موثوقة.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" tabindex="0" data-reveal>
+            <div>
+              <div class="svc-visual sv-build" aria-hidden="true">
+                <img class="sv-photo" src="assets/img01.png" alt="">
+                <span class="sv-ring"></span><span class="sv-ring r2"></span><span class="sv-scan"></span>
+              </div>
+              <h3 data-i18n="service1_title">أعمال المقاولات</h3>
+              <p data-i18n="service1_body">تنفيذ الأعمال الإنشائية والتجهيزات العامة مع ترتيب مراحل العمل والمتابعة الميدانية.</p>
+            </div>
+            <small data-i18n="service1_small">أعمال المقاولات</small>
+          </article>
+          <article class="service-card" tabindex="0" data-reveal>
+            <div>
+              <div class="svc-visual sv-cool" aria-hidden="true">
+                <img class="sv-photo" src="assets/img02.png" alt="">
+                <span class="sv-ring"></span><span class="sv-ring r2"></span><span class="sv-scan"></span>
+              </div>
+              <h3 data-i18n="service2_title">أعمال التكييف</h3>
+              <p data-i18n="service2_body">حلول تركيب وصيانة أنظمة التكييف للمواقع السكنية والتجارية بما يناسب المساحة والاستخدام.</p>
+            </div>
+            <small data-i18n="service2_small">أعمال التكييف</small>
+          </article>
+          <article class="service-card" tabindex="0" data-reveal>
+            <div>
+              <div class="svc-visual sv-secure" aria-hidden="true">
+                <img class="sv-photo" src="assets/img03.png" alt="">
+                <span class="sv-ring"></span><span class="sv-ring r2"></span><span class="sv-scan"></span>
+              </div>
+              <h3 data-i18n="service3_title">أعمال التبريد</h3>
+              <p data-i18n="service3_body">تجهيزات تبريد وتشغيل وصيانة تستهدف استقرار الأداء وتقليل الأعطال قدر الإمكان.</p>
+            </div>
+            <small data-i18n="service3_small">أعمال التبريد</small>
+          </article>
+          <article class="service-card" tabindex="0" data-reveal>
+            <div>
+              <div class="svc-visual sv-solar" aria-hidden="true">
+                <img class="sv-photo" src="assets/img04.png" alt="">
+                <span class="sv-ring"></span><span class="sv-ring r2"></span><span class="sv-scan"></span>
+              </div>
+              <h3 data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</h3>
+              <p data-ar="أنظمة طاقة شمسية صناعية ومنزلية موفّرة للطاقة، تقلّل الاستهلاك وتدعم البناء الأخضر ورؤية السعودية 2030." data-en="Efficient industrial and home solar power systems that cut consumption and support green building and Saudi Vision 2030.">أنظمة طاقة شمسية صناعية ومنزلية موفّرة للطاقة، تقلّل الاستهلاك وتدعم البناء الأخضر ورؤية السعودية 2030.</p>
+            </div>
+            <small data-ar="صناعي ومنزلي" data-en="Industrial & home">صناعي ومنزلي</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section alt">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 data-i18n="method_title">منهجية تنفيذ مختصرة وواضحة للعميل.</h2>
+          <p data-i18n="method_body">بدل النص الطويل، الصفحة تعرض مسار القرار بشكل سريع: معاينة، عرض، تنفيذ، تسليم. هذا يجعل التواصل أسهل ويزيد ثقة العميل.</p>
+        </div>
+        <div class="timeline">
+          <div class="step" data-reveal><h3 data-i18n="step1_title">المعاينة</h3><p data-i18n="step1_body">فهم الموقع، احتياج العميل، والقيود الفنية قبل التسعير.</p></div>
+          <div class="step" data-reveal><h3 data-i18n="step2_title">العرض</h3><p data-i18n="step2_body">تحديد نطاق العمل والمواد والمدة المتوقعة بصورة مباشرة.</p></div>
+          <div class="step" data-reveal><h3 data-i18n="step3_title">التنفيذ</h3><p data-i18n="step3_body">تنظيم الفريق ومتابعة الجودة أثناء مراحل العمل.</p></div>
+          <div class="step" data-reveal><h3 data-i18n="step4_title">التسليم</h3><p data-i18n="step4_body">مراجعة نهائية وتوثيق الملاحظات والمتابعة بعد الإنجاز.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 data-i18n="work_title">أعمالنا تتحرك بين الموقع، الهواء، والتسليم.</h2>
+          <p data-i18n="work_body">نماذج عمل مقترحة تعرض طريقة تفكير المؤسسة في المشاريع: تجهيز موقع، تركيب تكييف، تشغيل تبريد، ثم تسليم منظم للعميل.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card" data-reveal>
+            <div class="work-visual site">
+              <span class="work-block b1"></span>
+              <span class="work-block b2"></span>
+              <span class="work-line"></span>
+            </div>
+            <small data-i18n="work1_tag">مقاولات</small>
+            <h3 data-i18n="work1_title">تجهيز موقع وتنظيم مراحل التنفيذ</h3>
+            <p data-i18n="work1_body">تصور واضح لمسار العمل من المعاينة حتى تجهيز الموقع ومتابعة النقاط الأساسية.</p>
+          </article>
+          <article class="work-card" data-reveal>
+            <div class="work-visual hvac">
+              <span class="fan-mini"></span>
+              <span class="wind w1"></span>
+              <span class="wind w2"></span>
+              <span class="wind w3"></span>
+            </div>
+            <small data-i18n="work2_tag">تكييف</small>
+            <h3 data-i18n="work2_title">تركيب أنظمة تكييف للمساحات العملية</h3>
+            <p data-i18n="work2_body">حلول تناسب طبيعة المكان، مع اهتمام بتدفق الهواء وسهولة الصيانة.</p>
+          </article>
+          <article class="work-card" data-reveal>
+            <div class="work-visual cooling">
+              <span class="cool-core"></span>
+              <span class="cool-ring r1"></span>
+              <span class="cool-ring r2"></span>
+            </div>
+            <small data-i18n="work3_tag">تبريد</small>
+            <h3 data-i18n="work3_title">تشغيل تبريد مستقر ومتابعة الأعطال</h3>
+            <p data-i18n="work3_body">تركيز على استقرار الأداء وتقليل التوقفات من خلال تشغيل ومتابعة عملية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="partner" class="section alt partner-section">
+      <div class="container partner-grid">
+        <div class="partner-copy" data-reveal>
+          <p class="eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span data-i18n="partner_eyebrow">الشراكة</span>
+          </p>
+          <h2 data-i18n="partner_title">شريك تنفيذ يعتمد عليه في الأعمال الفنية والميدانية.</h2>
+          <p data-i18n="partner_body">يمكن للمؤسسة العمل مع ملاك المشاريع، المقاولين الرئيسيين، والمحال التجارية التي تحتاج جهة تنفيذ واضحة لأعمال المقاولات والتكييف والتبريد.</p>
+        </div>
+        <div class="partner-orbit" aria-hidden="true" data-reveal>
+          <div class="partner-core">
+            <img src="assets/pdf-extract/image-05.jpg" alt="">
+          </div>
+          <span class="partner-node n-a" data-i18n="partner_node1">ملاك المشاريع</span>
+          <span class="partner-node n-b" data-i18n="partner_node2">مقاولون رئيسيون</span>
+          <span class="partner-node n-c" data-i18n="partner_node3">مواقع تجارية</span>
+          <span class="partner-node n-d" data-i18n="partner_node4">فرق صيانة</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <video class="contact-video" id="contactVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/video01.mp4" type="video/mp4">
+      </video>
+      <div class="contact-video-tint" aria-hidden="true"></div>
+      <div class="container contact-grid">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <span data-i18n="contact_eyebrow">تواصل سريع</span>
+          </p>
+          <h2 data-i18n="contact_title">جاهزون لتحويل الاحتياج إلى نطاق عمل واضح.</h2>
+          <p data-i18n="contact_body">يمكن استخدام هذا القسم لاحقاً لوضع رقم الهاتف، البريد، أو واتساب الرسمي. حالياً وضعت نموذج طلب أنيق بدون إرسال خارجي حتى لا نستخدم بيانات غير موجودة في البروفايل.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <span data-i18n="contact_item1">بيانات التواصل الرسمية تضاف هنا</span>
+            </div>
+            <a class="contact-item" href="tel:+966560818464" style="text-decoration:none;color:inherit">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.5a2 2 0 0 1-.45 2.11L9 10.56a16 16 0 0 0 4.44 4.44l1.23-1.23a2 2 0 0 1 2.11-.45c.8.28 1.64.48 2.5.6A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-ar="اتصال: 0560818464" data-en="Call: 0560818464">اتصال: 0560818464</span>
+            </a>
+            <a class="contact-item" href="https://wa.me/966567940741" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/><path d="M8.5 8.5c0 3.5 3.5 7 7 7"/></svg>
+              <span data-ar="واتساب: 0567940741" data-en="WhatsApp: 0567940741">واتساب: 0567940741</span>
+            </a>
+            <div class="contact-item">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"/><circle cx="12" cy="10" r="2"/></svg>
+              <span data-i18n="contact_item2">المملكة العربية السعودية</span>
+            </div>
+          </div>
+        </div>
+        <form class="request-form" data-reveal>
+          <label><span data-i18n="form_name">الاسم</span>
+            <input type="text" name="name" placeholder="اسم العميل أو الشركة" data-i18n-placeholder="form_name_placeholder">
+          </label>
+          <label><span data-i18n="form_service">نوع الخدمة</span>
+            <input type="text" name="service" placeholder="مقاولات، تكييف، تبريد" data-i18n-placeholder="form_service_placeholder">
+          </label>
+          <label><span data-i18n="form_message">تفاصيل الطلب</span>
+            <textarea name="message" placeholder="اكتب وصفاً مختصراً للموقع أو العمل المطلوب" data-i18n-placeholder="form_message_placeholder"></textarea>
+          </label>
+          <button class="button" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+            <span data-i18n="form_button">تجهيز الطلب</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="mission-quote" data-reveal>
+      <div class="mq-inner">
+        <p class="mq-line" data-ar="نحن نمكّن الشركات والأفراد من تجربة أعلى معايير حلول المباني الذكية" data-en="We enable businesses and individuals to experience the highest standard of smart building solutions.">نحن نمكّن الشركات والأفراد من تجربة أعلى معايير حلول المباني الذكية</p>
+        <span class="mq-bar"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span data-i18n="footer_left">© 2026 مؤسسة فيصل فهد سالم الديباني</span>
+      <a class="dev-by" href="https://arabixweb.com" target="_blank" rel="noopener">
+        <span data-ar="طُوِّر بواسطة" data-en="Developed by">Developed by</span>
+        <img src="https://www.arabixweb.com/assets/logo-white.png" alt="Arabix">
+      </a>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+  <script>
+    (function(){
+      var t=document.getElementById('navToggle');
+      var nav=document.querySelector('.site-nav');
+      if(t&&nav){
+        t.addEventListener('click',function(){
+          var o=nav.classList.toggle('nav-open');
+          t.setAttribute('aria-expanded',o?'true':'false');
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function(){
+      function tr(){
+        var lang=(document.documentElement.lang==='en')?'en':'ar';
+        var els=document.querySelectorAll('[data-ar]');
+        for(var i=0;i<els.length;i++){
+          var v=els[i].getAttribute('data-'+lang);
+          if(v!==null) els[i].textContent=v;
+        }
+      }
+      tr();
+      var lt=document.getElementById('langToggle');
+      if(lt){ lt.addEventListener('click',function(){ setTimeout(tr,80); }); }
+      try{ var mo=new MutationObserver(tr); mo.observe(document.documentElement,{attributes:true,attributeFilter:['lang']}); }catch(e){}
+    })();
+  </script>
+  <script>
+    (function(){
+      var v=document.getElementById('contactVideo');
+      if(v){
+        var setRate=function(){ try{ v.playbackRate=0.5; }catch(e){} };
+        setRate();
+        v.addEventListener('loadedmetadata',setRate);
+        v.addEventListener('play',setRate);
+      }
+    })();
+  </script>
+</body>
+</html>
