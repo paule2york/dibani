@@ -421,17 +421,17 @@
     display: grid;
     gap: 3px;
   }
-  .links .dropdown-menu a {
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: .85rem;
+  .nav .links .dropdown-menu a {
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    font-size: .82rem !important;
     font-weight: 500;
     color: #94a3b8;
     background: rgba(14, 165, 233, .04);
     border: 1px solid transparent;
     transition: all .2s ease;
   }
-  .links .dropdown-menu a:hover {
+  .nav .links .dropdown-menu a:hover {
     background: rgba(14, 165, 233, .12);
     color: #ffffff;
     border-color: rgba(125, 211, 252, .2);
