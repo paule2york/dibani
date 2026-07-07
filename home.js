@@ -144,6 +144,7 @@ const translations = {
     menu_cooling_buy: "New Purchase",
     menu_cooling_maintenance: "Maintenance",
     menu_cooling_complaints: "Complaints",
+    menu_cooling_copper: "AC Copper Piping",
     stat1: "Specialized company",
     stat2: "Smart building solutions",
     stat3: "Execution and follow-up",
