@@ -266,7 +266,7 @@ html[dir='ltr'] h1 {
 }
 
 .hero {
-  padding-top: 158px;
+  padding-top: 175px;
 }
 
 @media (max-width: 920px) {
@@ -284,7 +284,7 @@ html[dir='ltr'] h1 {
   }
 
   .hero {
-    padding-top: 148px;
+    padding-top: 165px;
   }
 }
 
