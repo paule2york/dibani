@@ -34,18 +34,19 @@
     </div>
     <div class="nav-actions">
       <div class="cta-group">
-        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
-        <a class="cta" href="contact.html">تواصل معنا</a>
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوق الآن" data-en="Shop now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
       </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
       <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <header class="page-hero">
     <div class="container hero-inner">
       <div class="reveal">
-        <span class="eyebrow">المقاولات العامة</span>
-        <h1>طلب صيانة</h1>
-        <p class="lead">ادخل تفاصيل الصيانة المطلوبة وسنتواصل معك في الوقت المناسب.</p>
+        <span class="eyebrow" data-ar="المقاولات العامة" data-en="General Contracting">المقاولات العامة</span>
+        <h1 data-ar="طلب صيانة" data-en="Maintenance Request">طلب صيانة</h1>
+        <p class="lead" data-ar="ادخل تفاصيل الصيانة المطلوبة وسنتواصل معك في الوقت المناسب." data-en="Enter the required maintenance details and we will contact you at the appropriate time.">ادخل تفاصيل الصيانة المطلوبة وسنتواصل معك في الوقت المناسب.</p>
       </div>
       <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
     </div>
@@ -53,12 +54,12 @@
   <section class="section">
     <div class="container grid-2">
       <div class="text-panel reveal">
-        <h2>صيانة أعمال المقاولات</h2>
-        <p>حدد نوع النحاس المطلوب وإجمالي الأمتار التقريبي، وسيصل طلبك مباشرة إلى المؤسسة.</p>
+        <h2 data-ar="صيانة أعمال المقاولات" data-en="Contracting Maintenance">صيانة أعمال المقاولات</h2>
+        <p data-ar="حدد نوع النحاس المطلوب وإجمالي الأمتار التقريبي، وسيصل طلبك مباشرة إلى المؤسسة." data-en="Specify the required copper type and total approximate meters, and your request will be sent directly to the company.">حدد نوع النحاس المطلوب وإجمالي الأمتار التقريبي، وسيصل طلبك مباشرة إلى المؤسسة.</p>
         <ul class="fact-list">
-          <li>معاينة سريعة</li>
-          <li>تقدير واضح للأمتار</li>
-          <li>تنفيذ ومتابعة</li>
+          <li data-ar="معاينة سريعة" data-en="Quick inspection">معاينة سريعة</li>
+          <li data-ar="تقدير واضح للأمتار" data-en="Clear meter estimation">تقدير واضح للأمتار</li>
+          <li data-ar="تنفيذ ومتابعة" data-en="Implementation & follow-up">تنفيذ ومتابعة</li>
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="طلب صيانة - المقاولات العامة" onsubmit="return sendReq(event)">
@@ -112,6 +113,24 @@
           });
         }
       }
+    })();
+    (function(){
+      var defLang='ar';
+      function apply(lang){
+        var d=document.documentElement;
+        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+        var els=document.querySelectorAll('[data-en]');
+        for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+        try{localStorage.setItem('lang',lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+      if(saved) apply(saved);
+      var btn=document.getElementById('langToggle');
+      if(btn) btn.addEventListener('click',function(){
+        var next=(document.documentElement.lang==='ar')?'en':'ar';
+        apply(next);
+      });
     })();
   </script>
 </body>

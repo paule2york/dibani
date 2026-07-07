@@ -34,18 +34,19 @@
     </div>
     <div class="nav-actions">
       <div class="cta-group">
-        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
-        <a class="cta" href="contact.html">تواصل معنا</a>
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوق الآن" data-en="Shop now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
       </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
       <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <header class="page-hero">
     <div class="container hero-inner">
       <div class="reveal">
-        <span class="eyebrow">المقاولات العامة</span>
-        <h1>طلب ترميم</h1>
-        <p class="lead">حدد نوع خدمة الترميم المطلوبة والمواعيد المتاحة لديك.</p>
+        <span class="eyebrow" data-ar="المقاولات العامة" data-en="General Contracting">المقاولات العامة</span>
+        <h1 data-ar="طلب ترميم" data-en="Renovation Request">طلب ترميم</h1>
+        <p class="lead" data-ar="حدد نوع خدمة الترميم المطلوبة والمواعيد المتاحة لديك." data-en="Specify the required renovation service type and your available times.">حدد نوع خدمة الترميم المطلوبة والمواعيد المتاحة لديك.</p>
       </div>
       <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
     </div>
@@ -53,12 +54,12 @@
   <section class="section">
     <div class="container grid-2">
       <div class="text-panel reveal">
-        <h2>خدمات ترميم وصيانة</h2>
-        <p>اختر نوع الخدمة (كهرباء، سباكة، بلاط، دهان، ديكورات، أو خدمات أخرى) واذكر السبب.</p>
+        <h2 data-ar="خدمات ترميم وصيانة" data-en="Renovation & Maintenance Services">خدمات ترميم وصيانة</h2>
+        <p data-ar="اختر نوع الخدمة (كهرباء، سباكة، بلاط، دهان، ديكورات، أو خدمات أخرى) واذكر السبب." data-en="Choose the service type (electricity, plumbing, tiles, painting, decoration, or other services) and mention the reason.">اختر نوع الخدمة (كهرباء، سباكة، بلاط، دهان، ديكورات، أو خدمات أخرى) واذكر السبب.</p>
         <ul class="fact-list">
-          <li>كهرباء وسباكة</li>
-          <li>بلاط ودهان</li>
-          <li>ديكورات وخدمات أخرى</li>
+          <li data-ar="كهرباء وسباكة" data-en="Electricity & plumbing">كهرباء وسباكة</li>
+          <li data-ar="بلاط ودهان" data-en="Tiles & painting">بلاط ودهان</li>
+          <li data-ar="ديكورات وخدمات أخرى" data-en="Decoration & other services">ديكورات وخدمات أخرى</li>
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="طلب ترميم - المقاولات العامة" onsubmit="return sendReq(event)">
@@ -112,6 +113,24 @@
           });
         }
       }
+    })();
+    (function(){
+      var defLang='ar';
+      function apply(lang){
+        var d=document.documentElement;
+        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+        var els=document.querySelectorAll('[data-en]');
+        for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+        try{localStorage.setItem('lang',lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+      if(saved) apply(saved);
+      var btn=document.getElementById('langToggle');
+      if(btn) btn.addEventListener('click',function(){
+        var next=(document.documentElement.lang==='ar')?'en':'ar';
+        apply(next);
+      });
     })();
   </script>
 </body>

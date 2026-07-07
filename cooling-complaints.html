@@ -34,18 +34,19 @@
     </div>
     <div class="nav-actions">
       <div class="cta-group">
-        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
-        <a class="cta" href="contact.html">تواصل معنا</a>
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوق الآن" data-en="Shop now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
       </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
       <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <header class="page-hero">
     <div class="container hero-inner">
       <div class="reveal">
-        <span class="eyebrow">التبريد والتكييف والإلكترونيات</span>
-        <h1>تقديم شكوى</h1>
-        <p class="lead">أخبرنا بتفاصيل الشكوى وسنعمل على معالجتها في أقرب وقت.</p>
+        <span class="eyebrow" data-ar="التبريد والتكييف والإلكترونيات" data-en="Cooling, AC & Electronics">التبريد والتكييف والإلكترونيات</span>
+        <h1 data-ar="تقديم شكوى" data-en="Submit a Complaint">تقديم شكوى</h1>
+        <p class="lead" data-ar="أخبرنا بتفاصيل الشكوى وسنعمل على معالجتها في أقرب وقت." data-en="Tell us the complaint details and we will work on resolving it as soon as possible.">أخبرنا بتفاصيل الشكوى وسنعمل على معالجتها في أقرب وقت.</p>
       </div>
       <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
     </div>
@@ -53,12 +54,12 @@
   <section class="section">
     <div class="container grid-2">
       <div class="text-panel reveal">
-        <h2>شكاوى الأجهزة والخدمة</h2>
-        <p>حدد نوع الجهاز واشرح الشكوى بوضوح، وستصل مباشرة إلى المؤسسة للمتابعة والحل السريع.</p>
+        <h2 data-ar="شكاوى الأجهزة والخدمة" data-en="Device & Service Complaints">شكاوى الأجهزة والخدمة</h2>
+        <p data-ar="حدد نوع الجهاز واشرح الشكوى بوضوح، وستصل مباشرة إلى المؤسسة للمتابعة والحل السريع." data-en="Specify the device type and explain the complaint clearly, and it will be sent directly to the company for follow-up and quick resolution.">حدد نوع الجهاز واشرح الشكوى بوضوح، وستصل مباشرة إلى المؤسسة للمتابعة والحل السريع.</p>
         <ul class="fact-list">
-          <li>متابعة سريعة لكل شكوى</li>
-          <li>فريق صيانة متخصص</li>
-          <li>حلول موثوقة ومضمونة</li>
+          <li data-ar="متابعة سريعة لكل شكوى" data-en="Quick follow-up for every complaint">متابعة سريعة لكل شكوى</li>
+          <li data-ar="فريق صيانة متخصص" data-en="Specialized maintenance team">فريق صيانة متخصص</li>
+          <li data-ar="حلول موثوقة ومضمونة" data-en="Reliable and guaranteed solutions">حلول موثوقة ومضمونة</li>
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="شكوى - التبريد والتكييف والإلكترونيات" onsubmit="return sendReq(event)">
@@ -134,6 +135,24 @@
         });
       }
     }
+  })();
+  (function(){
+    var defLang='ar';
+    function apply(lang){
+      var d=document.documentElement;
+      d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+      var els=document.querySelectorAll('[data-en]');
+      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+      var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+      try{localStorage.setItem('lang',lang);}catch(e){}
+    }
+    var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+    if(saved) apply(saved);
+    var btn=document.getElementById('langToggle');
+    if(btn) btn.addEventListener('click',function(){
+      var next=(document.documentElement.lang==='ar')?'en':'ar';
+      apply(next);
+    });
   })();
   </script>
 </body>

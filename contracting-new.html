@@ -34,18 +34,19 @@
     </div>
     <div class="nav-actions">
       <div class="cta-group">
-        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
-        <a class="cta" href="contact.html">تواصل معنا</a>
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوق الآن" data-en="Shop now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
       </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
       <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <header class="page-hero">
     <div class="container hero-inner">
       <div class="reveal">
-        <span class="eyebrow">المقاولات العامة</span>
-        <h1>طلب عمل جديد</h1>
-        <p class="lead">أدخل تفاصيل العمل الجديد المطلوب وسنعاود التواصل معك في الوقت المناسب.</p>
+        <span class="eyebrow" data-ar="المقاولات العامة" data-en="General Contracting">المقاولات العامة</span>
+        <h1 data-ar="طلب عمل جديد" data-en="New Project Request">طلب عمل جديد</h1>
+        <p class="lead" data-ar="أدخل تفاصيل العمل الجديد المطلوب وسنعاود التواصل معك في الوقت المناسب." data-en="Enter the details of the new project required and we will get back to you at the appropriate time.">أدخل تفاصيل العمل الجديد المطلوب وسنعاود التواصل معك في الوقت المناسب.</p>
       </div>
       <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
     </div>
@@ -53,12 +54,12 @@
   <section class="section">
     <div class="container grid-2">
       <div class="text-panel reveal">
-        <h2>أعمال مقاولات جديدة</h2>
-        <p>املأ النموذج ببياناتك ونوع العمل المطلوب، وسيصل الطلب مباشرة إلى فريق المؤسسة عبر البريد.</p>
+        <h2 data-ar="أعمال مقاولات جديدة" data-en="New Contracting Projects">أعمال مقاولات جديدة</h2>
+        <p data-ar="املأ النموذج ببياناتك ونوع العمل المطلوب، وسيصل الطلب مباشرة إلى فريق المؤسسة عبر البريد." data-en="Fill in the form with your details and the type of work required, and the request will be sent directly to the team via email.">املأ النموذج ببياناتك ونوع العمل المطلوب، وسيصل الطلب مباشرة إلى فريق المؤسسة عبر البريد.</p>
         <ul class="fact-list">
-          <li>تنفيذ أعمال المقاولات العامة</li>
-          <li>معاينة وتسعير واضح</li>
-          <li>متابعة مراحل العمل حتى التسليم</li>
+          <li data-ar="تنفيذ أعمال المقاولات العامة" data-en="General contracting implementation">تنفيذ أعمال المقاولات العامة</li>
+          <li data-ar="معاينة وتسعير واضح" data-en="Inspection and clear pricing">معاينة وتسعير واضح</li>
+          <li data-ar="متابعة مراحل العمل حتى التسليم" data-en="Follow-up of project stages until delivery">متابعة مراحل العمل حتى التسليم</li>
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="طلب جديد - المقاولات العامة" onsubmit="return sendReq(event)">
@@ -112,6 +113,24 @@
           });
         }
       }
+    })();
+    (function(){
+      var defLang='ar';
+      function apply(lang){
+        var d=document.documentElement;
+        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+        var els=document.querySelectorAll('[data-en]');
+        for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+        try{localStorage.setItem('lang',lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+      if(saved) apply(saved);
+      var btn=document.getElementById('langToggle');
+      if(btn) btn.addEventListener('click',function(){
+        var next=(document.documentElement.lang==='ar')?'en':'ar';
+        apply(next);
+      });
     })();
   </script>
 </body>

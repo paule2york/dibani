@@ -32,20 +32,22 @@
       <a href="solar.html">الطاقة الشمسية</a>
       <a href="work.html">أعمالنا</a>
     </div>
+    </div>
     <div class="nav-actions">
       <div class="cta-group">
-        <a class="cta cta-shop" href="shop.html">تسوّق الآن</a>
-        <a class="cta" href="contact.html">تواصل معنا</a>
+        <a class="cta cta-shop" href="shop.html" data-ar="تسوق الآن" data-en="Shop now">تسوّق الآن</a>
+        <a class="cta" href="contact.html" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
       </div>
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
       <button class="nav-toggle" type="button" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <header class="page-hero">
     <div class="container hero-inner">
       <div class="reveal">
-        <span class="eyebrow">التبريد والتكييف والإلكترونيات</span>
-        <h1>طلب تمديد نحاس مكيفات</h1>
-        <p class="lead">حدد نوع التمديد والمسافة المطلوبة، وسنتواصل معك لتحديد الموعد والسعر.</p>
+        <span class="eyebrow" data-ar="التبريد والتكييف والإلكترونيات" data-en="Cooling, AC & Electronics">التبريد والتكييف والإلكترونيات</span>
+        <h1 data-ar="طلب تمديد نحاس مكيفات" data-en="AC Copper Piping Request">طلب تمديد نحاس مكيفات</h1>
+        <p class="lead" data-ar="حدد نوع التمديد والمسافة المطلوبة، وسنتواصل معك لتحديد الموعد والسعر." data-en="Specify the type of piping and distance needed, and we will contact you to schedule and price.">حدد نوع التمديد والمسافة المطلوبة، وسنتواصل معك لتحديد الموعد والسعر.</p>
       </div>
       <div class="hero-art"><div class="orb"><span class="ring"></span><img src="assets/logo.png" alt=""></div></div>
     </div>
@@ -53,13 +55,13 @@
   <section class="section">
     <div class="container grid-2">
       <div class="text-panel reveal">
-        <h2>تمديد نحاس مكيفات</h2>
-        <p>خدمات تمديد أنابيب النحاس لمكيفات الاسبلت والدواسات والديكت، بما في ذلك التمديد الجديد والصيانة وإصلاح التسريبات.</p>
+        <h2 data-ar="تمديد نحاس مكيفات" data-en="AC Copper Piping">تمديد نحاس مكيفات</h2>
+        <p data-ar="خدمات تمديد أنابيب النحاس لمكيفات الاسبلت والدواسات والديكت، بما في ذلك التمديد الجديد والصيانة وإصلاح التسريبات." data-en="Copper pipe installation services for split, ducted and cassette AC units, including new installations, maintenance and leak repairs.">خدمات تمديد أنابيب النحاس لمكيفات الاسبلت والدواسات والديكت، بما في ذلك التمديد الجديد والصيانة وإصلاح التسريبات.</p>
         <ul class="fact-list">
-          <li>تمديد نحاس جديد</li>
-          <li>إصلاح تسريبات النحاس</li>
-          <li>صيانة وتفتيش الأنابيب</li>
-          <li>تمديد لمسافات طويلة</li>
+          <li data-ar="تمديد نحاس جديد" data-en="New copper installation">تمديد نحاس جديد</li>
+          <li data-ar="إصلاح تسريبات النحاس" data-en="Copper leak repairs">إصلاح تسريبات النحاس</li>
+          <li data-ar="صيانة وتفتيش الأنابيب" data-en="Pipe maintenance & inspection">صيانة وتفتيش الأنابيب</li>
+          <li data-ar="تمديد لمسافات طويلة" data-en="Long distance piping">تمديد لمسافات طويلة</li>
         </ul>
       </div>
       <form class="lead-form card reveal" data-subject="طلب تمديد نحاس مكيفات - التبريد والتكييف" onsubmit="return sendReq(event)">
@@ -114,6 +116,24 @@
           });
         }
       }
+    })();
+    (function(){
+      var defLang='ar';
+      function apply(lang){
+        var d=document.documentElement;
+        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+        var els=document.querySelectorAll('[data-en]');
+        for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang); if(v!==null) els[i].textContent=v;}
+        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+        try{localStorage.setItem('lang',lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem('lang');}catch(e){}
+      if(saved) apply(saved);
+      var btn=document.getElementById('langToggle');
+      if(btn) btn.addEventListener('click',function(){
+        var next=(document.documentElement.lang==='ar')?'en':'ar';
+        apply(next);
+      });
     })();
   </script>
 </body>
