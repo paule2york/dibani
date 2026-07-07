@@ -160,7 +160,7 @@ button, a, input, textarea { font: inherit; }
   isolation: isolate;
   display: grid;
   align-items: center;
-  padding: 118px 22px 58px;
+  padding: 150px 22px 58px;
   overflow: hidden;
   color: white;
   background:
@@ -984,7 +984,7 @@ h2 {
 
 @media (max-width: 920px) {
   .nav-links { display: none; }
-  .hero { min-height: auto; padding-top: 104px; }
+  .hero { min-height: auto; padding-top: 140px; }
   .hero-grid,
   .about-grid,
   .section-head,
