@@ -33,6 +33,7 @@ const translations = {
     menu_cooling_buy: "شراء جديد",
     menu_cooling_maintenance: "صيانة",
     menu_cooling_complaints: "الشكاوى",
+    menu_cooling_copper: "تمديد نحاس مكيفات",
     stat1: "مؤسسة متخصصة",
     stat2: "حلول مبانٍ ذكية",
     stat3: "تنفيذ ومتابعة",
