@@ -60,13 +60,13 @@
 .nav .nav-actions { position: relative; z-index: 2; }
 
 .nav .logo img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 96px;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
   border: 0;
   background: transparent;
-  filter: contrast(1.15);
+  filter: brightness(0) invert(1);
 }
 
 /* Hero clears the fixed bar */
