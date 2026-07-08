@@ -373,70 +373,49 @@
   }
   .nav.nav-open .links { display: flex; }
   
-  /* Main menu items - ALL EQUAL */
   .nav .links > a,
   .nav .links > .dropdown > .drop-toggle {
-    min-width: 0;
-    text-align: start;
+    min-width: 0 !important;
+    text-align: start !important;
     padding: 14px 18px !important;
     border-radius: 10px !important;
     font-size: .95rem !important;
-    font-weight: 600;
-    color: #e2f1fb;
-    background: linear-gradient(135deg, rgba(14, 165, 233, .12), rgba(249, 115, 22, .08));
-    border: 1px solid rgba(125, 211, 252, .14);
+    font-weight: 600 !important;
+    color: #e2f1fb !important;
+    background: linear-gradient(135deg, rgba(14, 165, 233, .12), rgba(249, 115, 22, .08)) !important;
+    border: 1px solid rgba(125, 211, 252, .14) !important;
     transition: all .2s ease;
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 8px;
+    white-space: normal !important;
+    overflow: visible !important;
+    position: relative !important;
   }
-  .menu-icon {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: #7dd3fc;
-    stroke: #7dd3fc;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .nav .links > a:hover,
-  .nav .links > .dropdown > .drop-toggle:hover {
-    background: linear-gradient(135deg, rgba(14, 165, 233, .25), rgba(249, 115, 22, .15));
-    color: #ffffff;
-    border-color: rgba(125, 211, 252, .3);
-    box-shadow: 0 4px 16px rgba(14, 165, 233, .18);
-  }
-  .nav .links > a:hover .menu-icon,
-  .nav .links > .dropdown > .drop-toggle:hover .menu-icon {
-    color: #ffffff;
-    stroke: #ffffff;
-  }
-  .nav .links > a::after { content: none; }
   .menu-icon {
     color: #7dd3fc !important;
     width: 20px !important;
     height: 20px !important;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    overflow: visible !important;
   }
-
-  /* Override desktop gradient overlay on ::before */
   .nav .links > a::before,
   .nav .links .drop-toggle::before {
     content: none !important;
-    position: absolute !important;
-    inset: 0 !important;
-    border-radius: inherit !important;
-    background: linear-gradient(135deg, rgba(14,165,233,.22), rgba(249,115,22,.14)) !important;
-    opacity: 0 !important;
-    transition: opacity .22s ease !important;
-    z-index: -1 !important;
+    display: none !important;
   }
-  .nav .links > a:hover::before,
-  .nav .links .drop-toggle:hover::before {
-    opacity: 1 !important;
+  .nav .links > a::after { content: none !important; }
+  .nav .links > a:hover,
+  .nav .links > .dropdown > .drop-toggle:hover {
+    background: linear-gradient(135deg, rgba(14, 165, 233, .25), rgba(249, 115, 22, .15)) !important;
+    color: #ffffff !important;
+    border-color: rgba(125, 211, 252, .3) !important;
+    box-shadow: 0 4px 16px rgba(14, 165, 233, .18);
   }
   .nav .links > a:hover .menu-icon,
-  .nav .links .drop-toggle:hover .menu-icon {
+  .nav .links > .dropdown > .drop-toggle:hover .menu-icon {
     color: #ffffff !important;
   }
   .links .dropdown { display: block; width: 100%; }
