@@ -267,7 +267,7 @@
     function apply(lang){
       var d=document.documentElement; d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
       var els=document.querySelectorAll('[data-en]');
-      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang);if(v!==null)els[i].textContent=v;}
+      for(var i=0;i<els.length;i++){var v=els[i].getAttribute('data-'+lang);if(v!==null){var w=document.createTreeWalker(els[i],NodeFilter.SHOW_TEXT,null,false);var t=[];while(w.nextNode())t.push(w.currentNode);if(t.length>=1)t[t.length-1].textContent=v;}}
       var b=document.getElementById('langToggle');if(b)b.textContent=(lang==='ar')?'EN':'ع';
       try{localStorage.setItem('dibani_lang',lang);}catch(e){}
       renderCats();renderGrid();renderCartCount();

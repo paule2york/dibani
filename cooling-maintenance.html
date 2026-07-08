@@ -128,23 +128,27 @@
     (function(){
       var defLang='ar';
       function apply(lang){
-        var d=document.documentElement;
-        d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
-        var els=document.querySelectorAll('[data-en]');
-        for(var i=0;i<els.length;i++){
-          var el=els[i];
-          var tag=el.tagName.toLowerCase();
-          if(tag==='input'||tag==='select'||tag==='textarea'||tag==='option') continue;
-          var v=el.getAttribute('data-'+lang);
-          if(v!==null) el.textContent=v;
+      var d=document.documentElement;
+      d.lang=lang; d.dir=(lang==='en')?'ltr':'rtl';
+      var els=document.querySelectorAll('[data-en]');
+      for(var i=0;i<els.length;i++){
+        var v=els[i].getAttribute('data-'+lang);
+        if(v!==null){
+          var walker=document.createTreeWalker(els[i],NodeFilter.SHOW_TEXT,null,false);
+          var textNodes=[];
+          while(walker.nextNode()) textNodes.push(walker.currentNode);
+          if(textNodes.length===1){textNodes[0].textContent=v;}
+          else if(textNodes.length>1){textNodes[textNodes.length-1].textContent=v;}
+          else{els[i].appendChild(document.createTextNode(v));}
         }
-        var inputs=document.querySelectorAll('input[data-placeholder-'+lang+'], textarea[data-placeholder-'+lang+']');
-        for(var i=0;i<inputs.length;i++){var ph=inputs[i].getAttribute('data-placeholder-'+lang); if(ph) inputs[i].placeholder=ph;}
-        var opts=document.querySelectorAll('option[data-'+lang+']');
-        for(var i=0;i<opts.length;i++){var v=opts[i].getAttribute('data-'+lang); if(v!==null) opts[i].textContent=v;}
-        var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
-        try{localStorage.setItem('lang',lang);}catch(e){}
       }
+      var phs=document.querySelectorAll('[data-en-ph]');
+      for(var j=0;j<phs.length;j++){var p=phs[j].getAttribute('data-'+lang+'-ph'); if(p!==null) phs[j].setAttribute('placeholder',p);}
+      var opts=document.querySelectorAll('option[data-'+lang+']');
+      for(var i=0;i<opts.length;i++){var v=opts[i].getAttribute('data-'+lang); if(v!==null) opts[i].textContent=v;}
+      var b=document.getElementById('langToggle'); if(b) b.textContent=(lang==='ar')?'EN':'ع';
+      try{localStorage.setItem('dibani_lang',lang);}catch(e){}
+    }
       var saved; try{saved=localStorage.getItem('lang');}catch(e){}
       if(saved) apply(saved);
       var btn=document.getElementById('langToggle');

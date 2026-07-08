@@ -532,7 +532,7 @@
         var els=document.querySelectorAll('[data-ar]');
         for(var i=0;i<els.length;i++){
           var v=els[i].getAttribute('data-'+lang);
-          if(v!==null) els[i].textContent=v;
+          if(v!==null) var walker=document.createTreeWalker(els[i],NodeFilter.SHOW_TEXT,null,false);var tn=[];while(walker.nextNode())tn.push(walker.currentNode);if(tn.length>=1)tn[tn.length-1].textContent=v;
         }
       }
       tr();
