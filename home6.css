@@ -226,14 +226,30 @@
   }
 
   .menu-icon {
-    width: 20px !important;
-    height: 20px !important;
+    display: none !important;
+  }
+
+  /* CSS ICONS via ::before - Unicode characters */
+  .site-nav .nav-links > a[href*="about"]::before { content: '\2302'; }
+  .site-nav .nav-links .drop-toggle[data-i18n="menu_contracting"]::before { content: '\2692'; }
+  .site-nav .nav-links .drop-toggle[data-i18n="menu_cooling"]::before { content: '\2744'; }
+  .site-nav .nav-links > a[href*="security"]::before { content: '\25C6'; }
+  .site-nav .nav-links > a[href*="solar"]::before { content: '\2600'; }
+  .site-nav .nav-links > a[href*="work"]::before { content: '\25A3'; }
+
+  .site-nav .nav-links > a::before,
+  .site-nav .nav-links .drop-toggle::before {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
     flex-shrink: 0;
-    color: #7dd3fc !important;
-    stroke: #7dd3fc !important;
-    display: inline-block !important;
-    vertical-align: middle;
-    fill: none !important;
+    font-size: 16px;
+    color: #7dd3fc;
+    margin-left: 6px;
+  }
+  .site-nav .nav-links > a:hover::before,
+  .site-nav .nav-links .drop-toggle:hover::before {
+    color: #ffffff;
   }
 
   .site-nav .nav-links > a:hover,

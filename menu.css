@@ -412,6 +412,31 @@
     stroke: #ffffff;
   }
   .nav .links > a::after { content: none; }
+
+  .menu-icon { display: none !important; }
+
+  /* CSS ICONS via ::before - Unicode characters */
+  .nav .links > a[href*="about"]::before { content: '\2302'; }
+  .nav .links .drop-toggle[data-ar*="المقاولات"]::before { content: '\2692'; }
+  .nav .links .drop-toggle[data-ar*="التبريد"]::before { content: '\2744'; }
+  .nav .links > a[href*="security"]::before { content: '\25C6'; }
+  .nav .links > a[href*="solar"]::before { content: '\2600'; }
+  .nav .links > a[href*="work"]::before { content: '\25A3'; }
+
+  .nav .links > a::before,
+  .nav .links .drop-toggle::before {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #7dd3fc;
+    margin-left: 6px;
+  }
+  .nav .links > a:hover::before,
+  .nav .links .drop-toggle:hover::before {
+    color: #ffffff;
+  }
   
   .links .dropdown { display: block; width: 100%; }
   .links .dropdown > .drop-toggle {
