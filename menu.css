@@ -412,42 +412,33 @@
     stroke: #ffffff;
   }
   .nav .links > a::after { content: none; }
+  .menu-icon {
+    color: #7dd3fc !important;
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+  }
 
-  .menu-icon { display: none !important; }
-
-  /* CSS ICONS via ::before - Unicode characters */
-  .nav .links > a[href*="about"]::before { content: '\2302' !important; }
-  .nav .links .drop-toggle[data-ar*="المقاولات"]::before { content: '\2692' !important; }
-  .nav .links .drop-toggle[data-ar*="التبريد"]::before { content: '\2744' !important; }
-  .nav .links > a[href*="security"]::before { content: '\25C6' !important; }
-  .nav .links > a[href*="solar"]::before { content: '\2600' !important; }
-  .nav .links > a[href*="work"]::before { content: '\25A3' !important; }
-
+  /* Override desktop gradient overlay on ::before */
   .nav .links > a::before,
   .nav .links .drop-toggle::before {
-    content: '' !important;
-    position: relative !important;
-    inset: auto !important;
-    display: inline-block !important;
-    width: 20px !important;
-    text-align: center !important;
-    flex-shrink: 0;
-    font-size: 16px !important;
-    color: #7dd3fc !important;
-    background: none !important;
-    opacity: 1 !important;
-    margin-left: 6px !important;
-    border-radius: 0 !important;
-    transform: none !important;
-    transition: color .2s ease !important;
+    content: none !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: inherit !important;
+    background: linear-gradient(135deg, rgba(14,165,233,.22), rgba(249,115,22,.14)) !important;
+    opacity: 0 !important;
+    transition: opacity .22s ease !important;
+    z-index: -1 !important;
   }
   .nav .links > a:hover::before,
   .nav .links .drop-toggle:hover::before {
-    color: #ffffff !important;
-    background: none !important;
     opacity: 1 !important;
   }
-  
+  .nav .links > a:hover .menu-icon,
+  .nav .links .drop-toggle:hover .menu-icon {
+    color: #ffffff !important;
+  }
   .links .dropdown { display: block; width: 100%; }
   .links .dropdown > .drop-toggle {
     display: flex;
