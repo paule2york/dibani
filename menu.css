@@ -397,12 +397,11 @@
   .menu-icon {
     display: inline-block !important;
     color: #7dd3fc !important;
-    width: 20px !important;
-    height: 20px !important;
+    width: 18px !important;
+    height: 18px !important;
     flex-shrink: 0 !important;
-    order: 1 !important;
-    margin-left: 8px !important;
-  }
+    vertical-align: middle !important;
+    margin-left: 6px !important;
   }
   .nav .links > a::before,
   .nav .links .drop-toggle::before {
