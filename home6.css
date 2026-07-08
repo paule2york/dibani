@@ -219,13 +219,15 @@
     background: linear-gradient(135deg, rgba(14, 165, 233, .12), rgba(249, 115, 22, .08)) !important;
     border: 1px solid rgba(125, 211, 252, .14) !important;
     transition: all .2s ease;
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center;
     gap: 8px;
-    white-space: normal !important;
+    white-space: nowrap !important;
     overflow: visible !important;
     position: relative !important;
     min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .menu-icon {
