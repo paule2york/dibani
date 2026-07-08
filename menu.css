@@ -383,7 +383,7 @@
     font-size: .95rem !important;
     font-weight: 600;
     color: #e2f1fb;
-    background: linear-gradient(135deg, rgba(14, 165, 233, .08), rgba(249, 115, 22, .04));
+    background: linear-gradient(135deg, rgba(14, 165, 233, .12), rgba(249, 115, 22, .08));
     border: 1px solid rgba(125, 211, 252, .14);
     transition: all .2s ease;
     display: flex;
@@ -391,21 +391,25 @@
     gap: 8px;
   }
   .menu-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
-    opacity: .85;
+    color: #7dd3fc;
+    stroke: #7dd3fc;
+    display: inline-block;
+    vertical-align: middle;
   }
   .nav .links > a:hover,
   .nav .links > .dropdown > .drop-toggle:hover {
-    background: linear-gradient(135deg, rgba(14, 165, 233, .2), rgba(249, 115, 22, .12));
+    background: linear-gradient(135deg, rgba(14, 165, 233, .25), rgba(249, 115, 22, .15));
     color: #ffffff;
     border-color: rgba(125, 211, 252, .3);
     box-shadow: 0 4px 16px rgba(14, 165, 233, .18);
   }
   .nav .links > a:hover .menu-icon,
   .nav .links > .dropdown > .drop-toggle:hover .menu-icon {
-    opacity: 1;
+    color: #ffffff;
+    stroke: #ffffff;
   }
   .nav .links > a::after { content: none; }
   
