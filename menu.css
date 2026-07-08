@@ -99,7 +99,7 @@
   gap: 5px;
 }
 
-.mi { display: none !important; }
+
 
 .nav .links a,
 .nav .links .drop-toggle {
@@ -107,10 +107,6 @@
   overflow: hidden;
   min-width: 92px;
   text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
   font-weight: 600;
   font-size: .95rem;
@@ -398,14 +394,7 @@
     overflow: visible !important;
     position: relative !important;
   }
-  .mi {
-    display: inline-block !important;
-    width: 18px !important;
-    height: 18px !important;
-    flex-shrink: 0 !important;
-    vertical-align: middle !important;
-    margin-left: 6px !important;
-  }
+
   .nav .links > a::before,
   .nav .links .drop-toggle::before {
     content: none !important;

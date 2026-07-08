@@ -20,17 +20,13 @@
 .site-nav .nav-links .drop-toggle {
   font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .95rem;
   color: #e2f1fb;
   padding: 10px 15px;
   border-radius: 999px;
   transition: background .22s ease, color .22s ease, box-shadow .22s ease;
 }
 
-.mi { display: none !important; }
+
 
 .site-nav .nav-links > a:hover,
 .site-nav .nav-links > a:focus-visible,
@@ -233,14 +229,7 @@
     min-width: 0 !important;
   }
 
-  .mi {
-    display: inline-block !important;
-    width: 18px !important;
-    height: 18px !important;
-    flex-shrink: 0 !important;
-    vertical-align: middle !important;
-    margin-left: 6px !important;
-  }
+
 
   /* Kill the desktop gradient overlay completely */
   .site-nav .nav-links > a::before,
